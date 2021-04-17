@@ -24,7 +24,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 
 /**
  *
@@ -47,7 +47,7 @@ public class Estudante extends Pessoa implements Serializable {
     @Column(nullable = false)
     private String matricula;
     
-    @ManyToMany
+    @Transient
     private ArrayList<Curso> cursosMatriculados;
 
     public ArrayList<Curso> getCursosMatriculados() {

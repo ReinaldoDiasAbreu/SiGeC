@@ -26,6 +26,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 /**
  *
@@ -40,9 +42,11 @@ public class Curso implements Serializable {
     private Long id;
     
     @Column(nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataInicio;
     
     @Column(nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataFim;
     
     @Column(nullable = false)
@@ -67,9 +71,11 @@ public class Curso implements Serializable {
     private Coordenador criador;
     
     @ManyToMany(mappedBy = "estudante")
+    @Transient
     private ArrayList<Estudante> matriculados;
     
     @ManyToMany(mappedBy = "estudante")
+    @Transient
     private ArrayList<Estudante> solicitantes;
 
     public Coordenador getCriador() {

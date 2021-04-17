@@ -23,7 +23,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 /**
  *
@@ -40,7 +40,7 @@ public class Coordenador implements Serializable {
     @Column(nullable = false)
     private String codigo;
     
-    @OneToMany
+    @Transient
     private ArrayList<Curso> cursosCriados;
 
     public String getCodigo() {
