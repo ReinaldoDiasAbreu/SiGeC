@@ -69,6 +69,17 @@ public class Curso implements Serializable {
     @Column(nullable = false)
     private boolean concluido;
     
+    @Column(nullable = false)
+    private String titulo;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    
     @OneToOne
     private Coordenador criador;
     

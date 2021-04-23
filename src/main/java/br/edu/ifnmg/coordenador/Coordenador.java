@@ -17,6 +17,7 @@
 package br.edu.ifnmg.coordenador;
 
 import br.edu.ifnmg.curso.Curso;
+import br.edu.ifnmg.sigec.Pessoa;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.persistence.Column;
@@ -31,7 +32,7 @@ import javax.persistence.Transient;
  * @author alex
  */
 @Entity
-public class Coordenador implements Serializable {
+public class Coordenador extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
