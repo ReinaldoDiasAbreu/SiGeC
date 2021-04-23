@@ -1,2 +1,7 @@
-/home/alex/projetos/Jakarta workspace/SiGeC/src/main/java/br/edu/ifnmg/sigec/JAXRSConfiguration.java
-/home/alex/projetos/Jakarta workspace/SiGeC/src/main/java/br/edu/ifnmg/sigec/resources/JavaEE8Resource.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/entity/Certificado.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/resources/JavaEE8Resource.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/JAXRSConfiguration.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/entity/Coordenador.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/entity/Curso.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/entity/Estudante.java
+/home/alex/projetos/SiGeC/src/main/java/br/edu/ifnmg/sigec/Pessoa.java

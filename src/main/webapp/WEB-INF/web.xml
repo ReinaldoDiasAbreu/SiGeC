@@ -23,6 +23,14 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>login.xhtml</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/errors/exception.xhtml</location>
+        <error-code>404</error-code>
+        <location>/errors/not-found.xhtml</location>
+        <error-code>500</error-code>
+        <location>/errors/server-error.xhtml</location>
+    </error-page>
 </web-app>

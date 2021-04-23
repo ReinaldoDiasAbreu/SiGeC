@@ -19,24 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     Author     : alex
 */
 
-:root {
-    --black: #363537;
-    --white: #FFFFFA;
-    --green: #0CCE6B;
-    --red: #C73E1D;
-    --blue: #548687;
-}
-
-* {
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--black);
-}
+@import 'root.css';
 
 #home-header {
     width: 100%;
