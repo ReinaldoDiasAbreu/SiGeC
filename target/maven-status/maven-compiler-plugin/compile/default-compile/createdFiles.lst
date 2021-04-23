@@ -1,2 +1,7 @@
 br/edu/ifnmg/sigec/JAXRSConfiguration.class
+br/edu/ifnmg/estudante/Estudante.class
+br/edu/ifnmg/curso/Curso.class
+br/edu/ifnmg/sigec/Pessoa.class
+br/edu/ifnmg/coordenador/Coordenador.class
 br/edu/ifnmg/sigec/resources/JavaEE8Resource.class
+br/edu/ifnmg/certificado/Certificado.class
