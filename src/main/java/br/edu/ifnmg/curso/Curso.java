@@ -14,8 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.edu.ifnmg.sigec.entity;
+package br.edu.ifnmg.curso;
 
+import br.edu.ifnmg.estudante.Estudante;
+import br.edu.ifnmg.coordenador.Coordenador;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -66,6 +68,17 @@ public class Curso implements Serializable {
     
     @Column(nullable = false)
     private boolean concluido;
+    
+    @Column(nullable = false)
+    private String titulo;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
     
     @OneToOne
     private Coordenador criador;

@@ -14,9 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.edu.ifnmg.sigec.entity;
+package br.edu.ifnmg.estudante;
 
 import br.edu.ifnmg.sigec.Pessoa;
+import br.edu.ifnmg.curso.Curso;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.persistence.Column;

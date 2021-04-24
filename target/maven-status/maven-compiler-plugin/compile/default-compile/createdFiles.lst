@@ -1,2 +1,16 @@
+br/edu/ifnmg/certificado/CertificadoBeanLocal.class
+br/edu/ifnmg/estudante/Estudante.class
+br/edu/ifnmg/sigec/Pessoa.class
+br/edu/ifnmg/curso/CursoBean.class
 br/edu/ifnmg/sigec/JAXRSConfiguration.class
+br/edu/ifnmg/curso/Curso.class
+br/edu/ifnmg/estudante/EstudanteBean.class
+br/edu/ifnmg/coordenador/Coordenador.class
+br/edu/ifnmg/curso/CursoBeanLocal.class
+br/edu/ifnmg/coordenador/CoordenadorBeanLocal.class
 br/edu/ifnmg/sigec/resources/JavaEE8Resource.class
+br/edu/ifnmg/coordenador/CoordenadorBean.class
+br/edu/ifnmg/certificado/Certificado.class
+br/edu/ifnmg/certificado/CertificadoBean.class
+br/edu/ifnmg/estudante/EstudanteBeanLocal.class
+br/edu/ifnmg/sigec/FakeDataServlet.class
