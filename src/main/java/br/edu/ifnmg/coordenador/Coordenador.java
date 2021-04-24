@@ -14,8 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.edu.ifnmg.sigec.entity;
+package br.edu.ifnmg.coordenador;
 
+import br.edu.ifnmg.curso.Curso;
+import br.edu.ifnmg.sigec.Pessoa;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.persistence.Column;
@@ -30,7 +32,7 @@ import javax.persistence.Transient;
  * @author alex
  */
 @Entity
-public class Coordenador implements Serializable {
+public class Coordenador extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
