@@ -32,6 +32,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -41,6 +43,32 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "tbl_curso")
+@NamedQueries({
+    @NamedQuery(
+        name = "Curso.findAll",
+        query = "SELECT c FROM tbl_curso c"),
+    @NamedQuery(
+        name = "Curso.findById",
+        query = "SELECT c FROM tbl_curso c WHERE c.id = :id"),
+    @NamedQuery(
+        name = "Curso.findByMinistrante",
+        query = "SELECT c FROM tbl_curso c WHERE c.ministrante LIKE 'M%'"),
+    @NamedQuery(
+        name = "Curso.findByTitulo",
+        query = "SELECT c FROM tbl_curso c WHERE c.titulo LIKE 'T%'"),
+    @NamedQuery(
+        name = "Curso.findByLocalizacao",
+        query = "SELECT c FROM tbl_curso c WHERE c.localizacao LIKE 'L%'"),
+    @NamedQuery(
+        name = "Curso.findConcluidos",
+        query = "SELECT c FROM tbl_curso c WHERE c.concluido = true"),
+    @NamedQuery(
+        name = "Curso.findNaoConcluidos",
+        query = "SELECT c FROM tbl_curso c WHERE c.concluido = false"),
+    @NamedQuery(
+        name = "Curso.findComVagas",
+        query = "SELECT c FROM tbl_curso c WHERE c.vagas > 0")
+})
 public class Curso implements Serializable {
 
     private static final long serialVersionUID = 1L;

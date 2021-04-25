@@ -16,6 +16,7 @@
  */
 package br.edu.ifnmg.curso;
 
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -25,4 +26,14 @@ import javax.ejb.Local;
 @Local
 public interface CursoBeanLocal {
     public void save(Curso c);
+    public void delete(Curso c);
+    public void update(Curso c);
+    public List<Curso> findAllCursos();
+    public Curso findCursoById(Long id);
+    public List<Curso> findCursoByMinistrante(String ministrante);
+    public List<Curso> findCursoByTitulo(String titulo);
+    public List<Curso> findCursoByLocalizacao(String local);
+    public List<Curso> findCursosConcluidos();
+    public List<Curso> findCursosNaoConcluidos();
+    public List<Curso> findCursosComVagas();
 }

@@ -41,13 +41,13 @@ import javax.persistence.Table;
         query = "SELECT c FROM tbl_coordenador c"),
     @NamedQuery(
         name = "Coordenador.findById",
-        query = "SELECT c FROM tbl_coordenador c.id = :id"),
+        query = "SELECT c FROM tbl_coordenador c WHERE c.id = :id"),
     @NamedQuery(
         name = "Coordenador.findByCodigo",
-        query = "SELECT c FROM tbl_coordenador c.codigo = :codigo"),
+        query = "SELECT c FROM tbl_coordenador c WHERE c.codigo = :codigo"),
     @NamedQuery(
         name = "Coordenador.findCursosCriados",
-        query = "SELECT curso FROM tbl_curso curso" + 
+        query = "SELECT curso FROM tbl_curso curso " + 
                 "WHERE curso.coordenador_id = :id")
 })
 public class Coordenador extends Pessoa implements Serializable {
