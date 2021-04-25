@@ -16,6 +16,7 @@
  */
 package br.edu.ifnmg.certificado;
 
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -25,4 +26,9 @@ import javax.ejb.Local;
 @Local
 public interface CertificadoBeanLocal {
     public void save(Certificado c);
+    public void delete(Certificado c);
+    public void update(Certificado c);
+    public List<Certificado> findAll();
+    public Certificado findById(Long id);
+    public Certificado findByCodigo(String codigo);
 }
