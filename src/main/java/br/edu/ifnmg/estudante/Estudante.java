@@ -29,6 +29,8 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -37,6 +39,32 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tbl_estudante")
+
+@NamedQueries({
+    @NamedQuery(
+            name = "Estudante.findAll",
+            query = "SELECT e FROM tbl_estudante e"
+    ),
+    @NamedQuery(
+            name = "Estudante.findById",
+            query = "SELECT e FROM tbl_estudante e WHERE e.id = :id"
+    ),
+    @NamedQuery(
+            name = "Estudante.findByCpf",
+            query = "SELECT e FROM tbl_estudante e WHERE e.cpf = :cpf"
+    ),
+    @NamedQuery(
+            name = "Estudante.findAllCursosMatriculados",
+            query = "SELECT c FROM tbl_curso c, tbl_estudante_cursosmatriculados m"
+                    + "WHERE m.estudante_id = :id AND c.id = m.curso_id"
+    ),
+    @NamedQuery(
+            name = "Estudante.findCursosSolicitados",
+            query = "SELECT c FROM tbl_curso c, tbl_estudante_cursossolicitados m"
+                    + " WHERE m.estudante_id = :id AND c.id = m.curso_id"
+    )
+})
+
 public class Estudante extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;

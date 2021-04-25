@@ -16,6 +16,8 @@
  */
 package br.edu.ifnmg.estudante;
 
+import br.edu.ifnmg.curso.Curso;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -25,4 +27,11 @@ import javax.ejb.Local;
 @Local
 public interface EstudanteBeanLocal {
     public void save(Estudante e);
+    public void delete(Estudante e);
+    public void update(Estudante e);
+    public List<Estudante> findAllEstudantes();
+    public Estudante findEstudanteById(Long id);
+    public Estudante findEstudanteByCpf(String cpf);
+    public List<Curso> findAllCursosMatriculados(Long id);
+    public List<Curso> findCursosSolicitados(Long id);
 }

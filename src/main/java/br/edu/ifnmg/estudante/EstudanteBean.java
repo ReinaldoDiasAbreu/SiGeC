@@ -16,9 +16,12 @@
  */
 package br.edu.ifnmg.estudante;
 
+import br.edu.ifnmg.curso.Curso;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -33,4 +36,58 @@ public class EstudanteBean implements EstudanteBeanLocal {
     public void save(Estudante e){
         em.persist(e);
     }
+    
+    @Override
+    public void delete(Estudante e) {
+        em.remove(e);
+    }
+    
+    @Override
+    public void update(Estudante e){
+        em.refresh(e);
+    }
+   
+    @Override
+    public List<Estudante> findAllEstudantes() {
+        return em.createNamedQuery(
+        "Estudante.findAll", Estudante.class 
+        ).getResultList();
+    }
+
+    @Override
+    public Estudante findEstudanteById(Long id) {
+        Query q = em.createNamedQuery(
+            "Estudante.findById", Estudante.class
+        );
+        q.setParameter("id", id);
+        return (Estudante) q.getSingleResult();
+    }
+
+    @Override
+    public Estudante findEstudanteByCpf(String cpf) {
+        Query q = em.createNamedQuery(
+            "Estudante.findByCpf", Estudante.class
+        );
+        q.setParameter("cpf", cpf);
+        return (Estudante) q.getSingleResult();
+    }
+
+    @Override
+    public List<Curso> findAllCursosMatriculados(Long id) {
+        Query q = em.createNamedQuery(
+            "Estudante.findAllCursosMatriculados", Curso.class 
+        );
+        q.setParameter("id", id);
+        return q.getResultList();
+    }
+
+    @Override
+    public List<Curso> findCursosSolicitados(Long id) {
+       Query q = em.createNamedQuery(
+            "Estudante.findCursosSolicitados", Curso.class 
+        );
+        q.setParameter("id", id);
+        return q.getResultList();
+    }
+
 }
