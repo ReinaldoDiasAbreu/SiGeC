@@ -42,19 +42,19 @@ import javax.validation.constraints.NotEmpty;
 @NamedQueries({
     @NamedQuery(
             name = "Pessoa.findAll",
-            query = "SELECT p FROM tbl_pessoa p"
+            query = "SELECT p FROM pessoa p"
     ),
     @NamedQuery(
             name = "Pessoa.findById",
-            query = "SELECT p FROM tbl_pessoa p WHERE p.id = :id"
+            query = "SELECT p FROM pessoa p WHERE p.id = :id"
     ),
     @NamedQuery(
             name = "Pessoa.findByNome",
-            query = "SELECT p FROM tbl_pessoa p WHERE p.nome LIKE 'D%'"
+            query = "SELECT p FROM pessoa p WHERE p.nome LIKE 'D%'"
     ),
     @NamedQuery(
             name = "Pessoa.findByEmail",
-            query = "SELECT p FROM tbl_pessoa p WHERE p.email = :email"
+            query = "SELECT p FROM pessoa p WHERE p.email = :email"
     )
 })
 
