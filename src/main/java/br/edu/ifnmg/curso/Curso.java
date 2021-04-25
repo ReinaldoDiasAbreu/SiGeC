@@ -41,34 +41,36 @@ import javax.persistence.Temporal;
  *
  * @author alex
  */
+
 @Entity
 @Table(name = "tbl_curso")
 @NamedQueries({
     @NamedQuery(
         name = "Curso.findAll",
-        query = "SELECT c FROM tbl_curso c"),
+        query = "SELECT c FROM curso c"),
     @NamedQuery(
         name = "Curso.findById",
-        query = "SELECT c FROM tbl_curso c WHERE c.id = :id"),
+        query = "SELECT c FROM curso c WHERE c.id = :id"),
     @NamedQuery(
         name = "Curso.findByMinistrante",
-        query = "SELECT c FROM tbl_curso c WHERE c.ministrante LIKE 'M%'"),
+        query = "SELECT c FROM curso c WHERE c.ministrante LIKE 'M%'"),
     @NamedQuery(
         name = "Curso.findByTitulo",
-        query = "SELECT c FROM tbl_curso c WHERE c.titulo LIKE 'T%'"),
+        query = "SELECT c FROM curso c WHERE c.titulo LIKE 'T%'"),
     @NamedQuery(
         name = "Curso.findByLocalizacao",
-        query = "SELECT c FROM tbl_curso c WHERE c.localizacao LIKE 'L%'"),
+        query = "SELECT c FROM curso c WHERE c.localizacao LIKE 'L%'"),
     @NamedQuery(
         name = "Curso.findConcluidos",
-        query = "SELECT c FROM tbl_curso c WHERE c.concluido = true"),
+        query = "SELECT c FROM curso c WHERE c.concluido = true"),
     @NamedQuery(
         name = "Curso.findNaoConcluidos",
-        query = "SELECT c FROM tbl_curso c WHERE c.concluido = false"),
+        query = "SELECT c FROM curso c WHERE c.concluido = false"),
     @NamedQuery(
         name = "Curso.findComVagas",
-        query = "SELECT c FROM tbl_curso c WHERE c.vagas > 0")
+        query = "SELECT c FROM curso c WHERE c.vagas > 0")
 })
+
 public class Curso implements Serializable {
 
     private static final long serialVersionUID = 1L;

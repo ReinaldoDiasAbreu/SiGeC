@@ -35,24 +35,24 @@ import javax.persistence.Table;
  *
  * @author alex
  */
+
 @Entity
 @Table(name = "tbl_certificado")
 
 @NamedQueries({
     @NamedQuery(
             name = "Certificado.findAll",
-            query = "SELECT c FROM tbl_certificado c"
+            query = "SELECT c FROM certificado c"
     ),
     @NamedQuery(
             name = "Certificado.findById",
-            query = "SELECT c FROM tbl_certificado c WHERE c.id = :id"
+            query = "SELECT c FROM certificado c WHERE c.id = :id"
     ),
     @NamedQuery(
             name = "Certificado.findByCodigo",
-            query = "SELECT c FROM tbl_certificado c WHERE c.codigo = :codigo"
+            query = "SELECT c FROM certificado c WHERE c.codigo = :codigo"
     )
 })
-
 
 public class Certificado implements Serializable {
 

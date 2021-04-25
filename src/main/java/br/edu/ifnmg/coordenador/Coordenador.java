@@ -33,23 +33,25 @@ import javax.persistence.Table;
  *
  * @author alex
  */
+
 @Entity
 @Table(name = "tbl_coordenador")
 @NamedQueries({
     @NamedQuery(
         name = "Coordenador.findAll",
-        query = "SELECT c FROM tbl_coordenador c"),
+        query = "SELECT c FROM coordenador c"),
     @NamedQuery(
         name = "Coordenador.findById",
-        query = "SELECT c FROM tbl_coordenador c WHERE c.id = :id"),
+        query = "SELECT c FROM coordenador c WHERE c.id = :id"),
     @NamedQuery(
         name = "Coordenador.findByCodigo",
-        query = "SELECT c FROM tbl_coordenador c WHERE c.codigo = :codigo"),
+        query = "SELECT c FROM coordenador c WHERE c.codigo = :codigo"),
     @NamedQuery(
         name = "Coordenador.findCursosCriados",
-        query = "SELECT curso FROM tbl_curso curso " + 
-                "WHERE curso.coordenador_id = :id")
+        query = "SELECT cs FROM curso cs " + 
+                "WHERE cs.coordenador_id = :id")
 })
+
 public class Coordenador extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
