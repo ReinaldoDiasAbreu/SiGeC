@@ -24,6 +24,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,6 +35,21 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tbl_coordenador")
+@NamedQueries({
+    @NamedQuery(
+        name = "Coordenador.findAll",
+        query = "SELECT c FROM tbl_coordenador c"),
+    @NamedQuery(
+        name = "Coordenador.findById",
+        query = "SELECT c FROM tbl_coordenador c.id = :id"),
+    @NamedQuery(
+        name = "Coordenador.findByCodigo",
+        query = "SELECT c FROM tbl_coordenador c.codigo = :codigo"),
+    @NamedQuery(
+        name = "Coordenador.findCursosCriados",
+        query = "SELECT curso FROM tbl_curso curso" + 
+                "WHERE curso.coordenador_id = :id")
+})
 public class Coordenador extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;

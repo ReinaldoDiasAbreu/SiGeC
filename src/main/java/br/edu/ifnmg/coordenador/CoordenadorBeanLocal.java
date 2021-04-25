@@ -16,6 +16,8 @@
  */
 package br.edu.ifnmg.coordenador;
 
+import br.edu.ifnmg.curso.Curso;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -25,4 +27,10 @@ import javax.ejb.Local;
 @Local
 public interface CoordenadorBeanLocal {
     public void save(Coordenador c);
+    public void delete(Coordenador c);
+    public void update(Coordenador c);
+    public List<Coordenador> findAllCoordenadores();
+    public Coordenador findCoordenadorById(Long id);
+    public Coordenador findCoordenadorByCodigo(String cod);
+    public List<Curso> findCursosCriados(Long id);
 }
