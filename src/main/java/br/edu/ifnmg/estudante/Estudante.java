@@ -37,31 +37,32 @@ import javax.persistence.Table;
  *
  * @author alex
  */
+
 @Entity
 @Table(name = "tbl_estudante")
 
 @NamedQueries({
     @NamedQuery(
             name = "Estudante.findAll",
-            query = "SELECT e FROM tbl_estudante e"
+            query = "SELECT e FROM estudante e"
     ),
     @NamedQuery(
             name = "Estudante.findById",
-            query = "SELECT e FROM tbl_estudante e WHERE e.id = :id"
+            query = "SELECT e FROM estudante e WHERE e.id = :id"
     ),
     @NamedQuery(
             name = "Estudante.findByCpf",
-            query = "SELECT e FROM tbl_estudante e WHERE e.cpf = :cpf"
+            query = "SELECT e FROM estudante e WHERE e.cpf = :cpf"
     ),
     @NamedQuery(
             name = "Estudante.findAllCursosMatriculados",
-            query = "SELECT c FROM tbl_curso c, tbl_estudante_cursosmatriculados m"
-                    + "WHERE m.estudante_id = :id AND c.id = m.curso_id"
+            query = "SELECT c FROM curso c "
+                    + "JOIN c.matriculados m WHERE m.id = :id"
     ),
     @NamedQuery(
             name = "Estudante.findCursosSolicitados",
-            query = "SELECT c FROM tbl_curso c, tbl_estudante_cursossolicitados m"
-                    + " WHERE m.estudante_id = :id AND c.id = m.curso_id"
+            query = "SELECT c FROM curso c "
+                    + "JOIN c.solicitados s WHERE s.id = :id"
     )
 })
 
