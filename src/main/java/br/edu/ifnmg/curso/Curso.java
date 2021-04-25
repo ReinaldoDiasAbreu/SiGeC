@@ -21,24 +21,29 @@ import br.edu.ifnmg.coordenador.Coordenador;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
-import javax.persistence.Transient;
 
 /**
  *
  * @author alex
  */
 @Entity
+@Table(name = "tbl_curso")
 public class Curso implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -55,7 +60,7 @@ public class Curso implements Serializable {
     private String descricao;
     
     @Column(nullable = false)
-    private String local;
+    private String localizacao;
     
     @Column(nullable = false)
     private int cargaHoraria;
@@ -71,32 +76,25 @@ public class Curso implements Serializable {
     
     @Column(nullable = false)
     private String titulo;
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Coordenador criador;
     
-    @ManyToMany(mappedBy = "estudante")
-    @Transient
-    private ArrayList<Estudante> matriculados;
+    @ManyToMany(mappedBy = "cursosMatriculados")
+    private List<Estudante> matriculados;
     
-    @ManyToMany(mappedBy = "estudante")
-    @Transient
-    private ArrayList<Estudante> solicitantes;
+    @ManyToMany(mappedBy = "cursosSolicitados")
+    private List<Estudante> solicitantes;
 
-    public Coordenador getCriador() {
-        return criador;
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+    public Long getId() {
+        return id;
     }
 
-    public void setCriador(Coordenador criador) {
-        this.criador = criador;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getDataInicio() {
@@ -123,12 +121,12 @@ public class Curso implements Serializable {
         this.descricao = descricao;
     }
 
-    public String getLocal() {
-        return local;
+    public String getLocalizacao() {
+        return localizacao;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 
     public int getCargaHoraria() {
@@ -163,7 +161,23 @@ public class Curso implements Serializable {
         this.concluido = concluido;
     }
 
-    public ArrayList<Estudante> getMatriculados() {
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public Coordenador getCriador() {
+        return criador;
+    }
+
+    public void setCriador(Coordenador criador) {
+        this.criador = criador;
+    }
+
+    public List<Estudante> getMatriculados() {
         return matriculados;
     }
 
@@ -171,7 +185,7 @@ public class Curso implements Serializable {
         this.matriculados = matriculados;
     }
 
-    public ArrayList<Estudante> getSolicitantes() {
+    public List<Estudante> getSolicitantes() {
         return solicitantes;
     }
 
@@ -179,14 +193,9 @@ public class Curso implements Serializable {
         this.solicitantes = solicitantes;
     }
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
     @Override
     public int hashCode() {
         int hash = 0;
@@ -211,5 +220,7 @@ public class Curso implements Serializable {
     public String toString() {
         return "br.edu.ifnmg.sigec.entity.Curso[ id=" + id + " ]";
     }
+    
+    //</editor-fold>
     
 }

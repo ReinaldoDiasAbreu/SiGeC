@@ -79,7 +79,7 @@ public class FakeDataServlet extends HttpServlet {
         cu.setCriador(c);
         cu.setDataFim(new Date());
         cu.setDataInicio(new Date());
-        cu.setLocal("Laboratório de TI");
+        cu.setLocalizacao("Laboratório de TI");
         cu.setMinistrante("Dom Pedro II");
         cu.setVagas(30);
         cu.setTitulo("Persistência Poliglota");

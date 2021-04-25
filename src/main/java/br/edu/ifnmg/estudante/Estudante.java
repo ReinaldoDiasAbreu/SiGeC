@@ -20,24 +20,26 @@ import br.edu.ifnmg.sigec.Pessoa;
 import br.edu.ifnmg.curso.Curso;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author alex
  */
 @Entity
+@Table(name = "tbl_estudante")
 public class Estudante extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     
     @Column(length = 11, nullable = false)
     private String cpf;
@@ -48,10 +50,25 @@ public class Estudante extends Pessoa implements Serializable {
     @Column(nullable = false)
     private String matricula;
     
-    @Transient
-    private ArrayList<Curso> cursosMatriculados;
-
-    public ArrayList<Curso> getCursosMatriculados() {
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "tbl_estudante_cursosmatriculados",
+            joinColumns = 
+                    @JoinColumn(name = "estudante_id", foreignKey = @ForeignKey(name = "fk_estudante_id")),
+            inverseJoinColumns = @JoinColumn(name = "curso_id", foreignKey = @ForeignKey(name = "fk_curso_id")))
+    private List<Curso> cursosMatriculados;
+    
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "tbl_estudante_cursossolicitados",
+            joinColumns = 
+                    @JoinColumn(name = "estudante_id", foreignKey = @ForeignKey(name = "fk_estudante_id")),
+            inverseJoinColumns = @JoinColumn(name = "curso_id", foreignKey = @ForeignKey(name = "fk_curso_id")))
+    private List<Curso> cursosSolicitados;
+    
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+    
+    public List<Curso> getCursosMatriculados() {
         return cursosMatriculados;
     }
 
@@ -59,6 +76,14 @@ public class Estudante extends Pessoa implements Serializable {
         this.cursosMatriculados = cursosMatriculados;
     }
 
+    public List<Curso> getCursosSolicitados() {
+        return cursosSolicitados;
+    }
+
+    public void setCursosSolicitados(ArrayList<Curso> cursosSolicitados) {
+        this.cursosSolicitados = cursosSolicitados;
+    }
+    
     public String getCpf() {
         return cpf;
     }
@@ -82,21 +107,14 @@ public class Estudante extends Pessoa implements Serializable {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long id) {
-        this.id = id;
-    }
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (getId() != null ? getId().hashCode() : 0);
         return hash;
     }
 
@@ -107,7 +125,7 @@ public class Estudante extends Pessoa implements Serializable {
             return false;
         }
         Estudante other = (Estudante) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.getId() == null && other.getId()!= null) || (this.getId() != null && !this.getId().equals(other.getId()))) {
             return false;
         }
         return true;
@@ -115,7 +133,7 @@ public class Estudante extends Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.sigec.entity.Estudante[ id=" + id + " ]";
+        return "br.edu.ifnmg.sigec.entity.Estudante[ id=" + getId() + " ]";
     }
-    
+    //</editor-fold>
 }

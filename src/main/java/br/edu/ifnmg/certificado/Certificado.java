@@ -54,6 +54,8 @@ public class Certificado implements Serializable {
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Estudante estudante;
+    
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
 
     public String getCodigo() {
         return codigo;
@@ -86,6 +88,10 @@ public class Certificado implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
 
     @Override
     public int hashCode() {
@@ -111,5 +117,5 @@ public class Certificado implements Serializable {
     public String toString() {
         return "br.edu.ifnmg.sigec.entity.Certificado[ id=" + id + " ]";
     }
-    
+    //</editor-fold>
 }

@@ -22,9 +22,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
@@ -32,12 +30,10 @@ import javax.persistence.Transient;
  * @author alex
  */
 @Entity
+@Table(name = "tbl_coordenador")
 public class Coordenador extends Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
     
     @Column(nullable = false)
     private String codigo;
@@ -61,18 +57,10 @@ public class Coordenador extends Pessoa implements Serializable {
         this.cursosCriados = cursosCriados;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (getId() != null ? getId().hashCode() : 0);
         return hash;
     }
 
@@ -83,7 +71,7 @@ public class Coordenador extends Pessoa implements Serializable {
             return false;
         }
         Coordenador other = (Coordenador) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.getId().equals(other.getId()))) {
             return false;
         }
         return true;
@@ -91,7 +79,7 @@ public class Coordenador extends Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "br.edu.ifnmg.sigec.entity.Coordenador[ id=" + id + " ]";
+        return "br.edu.ifnmg.sigec.entity.Coordenador[ id=" + getId() + " ]";
     }
     
 }
