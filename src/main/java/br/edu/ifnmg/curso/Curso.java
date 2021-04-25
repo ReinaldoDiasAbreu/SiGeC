@@ -29,8 +29,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -77,9 +78,9 @@ public class Curso implements Serializable {
     @Column(nullable = false)
     private String titulo;
     
-    @OneToOne(fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
+    @ManyToOne(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    @JoinColumn(name = "coordenador_id")
     private Coordenador criador;
     
     @ManyToMany(mappedBy = "cursosMatriculados")
@@ -87,6 +88,11 @@ public class Curso implements Serializable {
     
     @ManyToMany(mappedBy = "cursosSolicitados")
     private List<Estudante> solicitantes;
+
+    public Curso() {
+        matriculados = new ArrayList<>();
+        solicitantes = new ArrayList<>();
+    }
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public Long getId() {

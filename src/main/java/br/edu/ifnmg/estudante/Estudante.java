@@ -65,6 +65,11 @@ public class Estudante extends Pessoa implements Serializable {
                     @JoinColumn(name = "estudante_id", foreignKey = @ForeignKey(name = "fk_estudante_id")),
             inverseJoinColumns = @JoinColumn(name = "curso_id", foreignKey = @ForeignKey(name = "fk_curso_id")))
     private List<Curso> cursosSolicitados;
+
+    public Estudante() {
+        cursosMatriculados = new ArrayList<>();
+        cursosSolicitados = new ArrayList<>();
+    }
     
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     

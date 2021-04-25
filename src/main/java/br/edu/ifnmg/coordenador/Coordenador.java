@@ -20,10 +20,12 @@ import br.edu.ifnmg.curso.Curso;
 import br.edu.ifnmg.sigec.Pessoa;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -38,8 +40,14 @@ public class Coordenador extends Pessoa implements Serializable {
     @Column(nullable = false)
     private String codigo;
     
-    @Transient
-    private ArrayList<Curso> cursosCriados;
+    @OneToMany(mappedBy = "criador", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Curso> cursosCriados;
+
+    public Coordenador() {
+        cursosCriados = new ArrayList<>();
+    }
+    
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
 
     public String getCodigo() {
         return codigo;
@@ -49,13 +57,17 @@ public class Coordenador extends Pessoa implements Serializable {
         this.codigo = codigo;
     }
 
-    public ArrayList<Curso> getCursosCriados() {
+    public List<Curso> getCursosCriados() {
         return cursosCriados;
     }
 
     public void setCursosCriados(ArrayList<Curso> cursosCriados) {
         this.cursosCriados = cursosCriados;
     }
+    
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
 
     @Override
     public int hashCode() {
@@ -81,5 +93,7 @@ public class Coordenador extends Pessoa implements Serializable {
     public String toString() {
         return "br.edu.ifnmg.sigec.entity.Coordenador[ id=" + getId() + " ]";
     }
+    
+    //</editor-fold>
     
 }
