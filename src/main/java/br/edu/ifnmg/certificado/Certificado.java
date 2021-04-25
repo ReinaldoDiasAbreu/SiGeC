@@ -19,18 +19,22 @@ package br.edu.ifnmg.certificado;
 import br.edu.ifnmg.estudante.Estudante;
 import br.edu.ifnmg.curso.Curso;
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author alex
  */
 @Entity
+@Table(name = "tbl_certificado")
 public class Certificado implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,11 +45,17 @@ public class Certificado implements Serializable {
     @Column(nullable = false)
     private String codigo;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Curso curso;
     
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Estudante estudante;
+    
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
 
     public String getCodigo() {
         return codigo;
@@ -78,6 +88,10 @@ public class Certificado implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
 
     @Override
     public int hashCode() {
@@ -103,5 +117,5 @@ public class Certificado implements Serializable {
     public String toString() {
         return "br.edu.ifnmg.sigec.entity.Certificado[ id=" + id + " ]";
     }
-    
+    //</editor-fold>
 }

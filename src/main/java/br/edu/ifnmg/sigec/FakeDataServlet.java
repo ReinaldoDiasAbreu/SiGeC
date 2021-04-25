@@ -31,11 +31,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 
 /**
  *
  * @author alex
  */
+@Transactional
 public class FakeDataServlet extends HttpServlet {
     @Inject
     private EstudanteBeanLocal ebl;
@@ -45,56 +47,16 @@ public class FakeDataServlet extends HttpServlet {
     private CursoBeanLocal cubl;
     @Inject
     private CertificadoBeanLocal cebl;
-    
-    private void populate(){
-        Estudante e = new Estudante();
-        e.setCpf("11122233355");
-        e.setEmail("estudante@email.com");
-        e.setMatricula("552114");
-        e.setNome("Abílio Almeida");
-        e.setSenha("abilio123");
-        
-        ebl.save(e);
-        
-        Estudante e2 = new Estudante();
-        e2.setCpf("10120230355");
-        e2.setEmail("estudante2@email.com");
-        e2.setMatricula("225544");
-        e2.setNome("Bruno Barbosa");
-        e2.setSenha("senhadificil");
-        
-        ebl.save(e2);
-        
-        Coordenador c = new Coordenador();
-        c.setCodigo("123321");
-        c.setNome("Marcos Quântico");
-        c.setEmail("marcos@ifnmg.edu.br");
-        c.setSenha("senhasenha");
-        
-        cbl.save(c);
-        
-        Curso cu = new Curso();
-        cu.setCargaHoraria(20);
-        cu.setConcluido(false);
-        cu.setCriador(c);
-        cu.setDataFim(new Date());
-        cu.setDataInicio(new Date());
-        cu.setLocal("Laboratório de TI");
-        cu.setMinistrante("Dom Pedro II");
-        cu.setVagas(30);
-        cu.setTitulo("Persistência Poliglota");
-        cu.setDescricao("Aprenda a persistir seus dados com MongoDB, MySQL, Oracle e pedra talhada.");
-        
-        cubl.save(cu);
-    }   
+   
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        populate();
-        
         try ( PrintWriter out = response.getWriter()) {
+            
+            // Primeiro teste de percistência.
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -102,6 +64,56 @@ public class FakeDataServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Populating...</h1>");
+            
+            Coordenador c = new Coordenador();
+            c.setCodigo("123321");
+            c.setNome("Marcos Quântico");
+            c.setEmail("marcos@ifnmg.edu.br");
+            c.setSenha("senhasenha");
+            
+
+            Curso cu = new Curso();
+            cu.setCargaHoraria(20);
+            cu.setConcluido(false);
+            cu.setCriador(c);
+            cu.setDataFim(new Date());
+            cu.setDataInicio(new Date());
+            cu.setLocalizacao("Laboratório de TI");
+            cu.setMinistrante("Dom Pedro II");
+            cu.setVagas(30);
+            cu.setTitulo("Persistência Poliglota");
+            cu.setDescricao("Aprenda a persistir seus dados com MongoDB, MySQL, Oracle e pedra talhada.");
+            
+
+            Estudante e = new Estudante();
+            e.setCpf("11122233355");
+            e.setEmail("estudante@email.com");
+            e.setMatricula("552114");
+            e.setNome("Abílio Almeida");
+            e.setSenha("abilio123");
+            e.getCursosMatriculados().add(cu);
+            cu.getMatriculados().add(e);
+
+
+            Estudante e2 = new Estudante();
+            e2.setCpf("10120230355");
+            e2.setEmail("estudante2@email.com");
+            e2.setMatricula("225544");
+            e2.setNome("Bruno Barbosa");
+            e2.setSenha("senhadificil");
+            e2.getCursosSolicitados().add(cu);
+            cu.getSolicitantes().add(e2);
+            
+            
+            cubl.save(cu);
+            out.println("\n- Add Curso: " + cu);
+            cbl.save(c);
+            out.println("\n- Add Coordenador: " + c);
+            ebl.save(e);
+            out.println("\n- Add Estudante 1: " + e);
+            ebl.save(e2);
+            out.println("\n- Add Estudante 2: " + e2);
+            
             out.println("</body>");
             out.println("</html>");
         }
