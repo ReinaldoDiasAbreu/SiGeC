@@ -16,9 +16,11 @@
  */
 package br.edu.ifnmg.certificado;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,9 +30,46 @@ import javax.persistence.PersistenceContext;
 public class CertificadoBean implements CertificadoBeanLocal{
     @PersistenceContext
     EntityManager em;
-    
+
     @Override
-    public void save(Certificado c){
+    public void save(Certificado c) {
         em.persist(c);
     }
+
+    @Override
+    public void delete(Certificado c) {
+        em.remove(c);
+    }
+
+    @Override
+    public void update(Certificado c) {
+        em.refresh(c);
+    }
+
+    @Override
+    public List<Certificado> findAll() {
+        return em.createNamedQuery(
+        "Certificado.findAll", Certificado.class 
+        ).getResultList();
+    }
+
+    @Override
+    public Certificado findById(Long id) {
+        Query q = em.createNamedQuery(
+            "Certificado.findById", Certificado.class
+        );
+        q.setParameter("id", id);
+        return (Certificado) q.getSingleResult();
+    }
+
+    @Override
+    public Certificado findByCodigo(String codigo) {
+       Query q = em.createNamedQuery(
+            "Certificado.findByCodigo", Certificado.class
+        );
+        q.setParameter("codigo", codigo);
+        return (Certificado) q.getSingleResult();
+    }
+    
+    
 }

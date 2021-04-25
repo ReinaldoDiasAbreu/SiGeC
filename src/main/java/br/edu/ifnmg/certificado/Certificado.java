@@ -26,6 +26,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -35,6 +37,23 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tbl_certificado")
+
+@NamedQueries({
+    @NamedQuery(
+            name = "Certificado.findAll",
+            query = "SELECT c FROM tbl_certificado c"
+    ),
+    @NamedQuery(
+            name = "Certificado.findById",
+            query = "SELECT c FROM tbl_certificado c WHERE c.id = :id"
+    ),
+    @NamedQuery(
+            name = "Certificado.findByCodigo",
+            query = "SELECT c FROM tbl_certificado c WHERE c.codigo = :codigo"
+    )
+})
+
+
 public class Certificado implements Serializable {
 
     private static final long serialVersionUID = 1L;
