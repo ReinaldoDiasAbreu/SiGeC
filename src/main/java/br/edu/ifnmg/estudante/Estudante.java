@@ -16,7 +16,7 @@
  */
 package br.edu.ifnmg.estudante;
 
-import br.edu.ifnmg.sigec.Pessoa;
+import br.edu.ifnmg.pessoa.Pessoa;
 import br.edu.ifnmg.curso.Curso;
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -17,7 +17,7 @@
 package br.edu.ifnmg.coordenador;
 
 import br.edu.ifnmg.curso.Curso;
-import br.edu.ifnmg.sigec.Pessoa;
+import br.edu.ifnmg.pessoa.Pessoa;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
