@@ -125,4 +125,11 @@ public class Pessoa implements Serializable{
     
     //</editor-fold>
 
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", tipo=" + tipo + '}';
+    }
+    
+    
+
 }

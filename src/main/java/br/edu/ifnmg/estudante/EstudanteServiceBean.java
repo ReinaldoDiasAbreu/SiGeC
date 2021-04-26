@@ -39,6 +39,7 @@ public class EstudanteServiceBean implements Serializable  {
     private String senha2;
 
     public EstudanteServiceBean() {
+        estudante = new Estudante();
     }
 
     public Estudante getEstudante() {
@@ -54,7 +55,7 @@ public class EstudanteServiceBean implements Serializable  {
         if(senha1.equals(senha2)){
             estudante.setSenha(senha1);
         }
-        System.out.println("Estudante: " + estudante);
+        System.out.println("\n\nEstudante: " + estudante);
         estudantelocal.save(estudante);
     }
 
