@@ -35,7 +35,7 @@ import javax.validation.constraints.NotEmpty;
  * @author alex
  */
 
-@Entity
+@Entity(name = "pessoa")
 @Table(name = "tbl_pessoa")
 @Inheritance(strategy = InheritanceType.JOINED)
 
@@ -80,7 +80,7 @@ public class Pessoa implements Serializable{
     private String senha;
     
     @Column(nullable = false)
-    private char tipo;
+    private Integer tipo;
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public Long getId() {
@@ -115,11 +115,11 @@ public class Pessoa implements Serializable{
         this.senha = senha;
     }
 
-    public char getTipo() {
+    public Integer getTipo() {
         return tipo;
     }
 
-    public void setTipo(char tipo) {
+    public void setTipo(Integer tipo) {
         this.tipo = tipo;
     }
     

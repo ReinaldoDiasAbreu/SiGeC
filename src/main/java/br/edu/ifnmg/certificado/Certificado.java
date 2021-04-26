@@ -36,7 +36,7 @@ import javax.persistence.Table;
  * @author alex
  */
 
-@Entity
+@Entity(name = "certificado")
 @Table(name = "tbl_certificado")
 
 @NamedQueries({

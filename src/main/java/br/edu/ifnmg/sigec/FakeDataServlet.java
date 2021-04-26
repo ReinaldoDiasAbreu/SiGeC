@@ -70,7 +70,7 @@ public class FakeDataServlet extends HttpServlet {
             c.setNome("Marcos Quântico");
             c.setEmail("marcos@ifnmg.edu.br");
             c.setSenha("senhasenha");
-            
+            c.setTipo(0);
 
             Curso cu = new Curso();
             cu.setCargaHoraria(20);
@@ -91,20 +91,20 @@ public class FakeDataServlet extends HttpServlet {
             e.setMatricula("552114");
             e.setNome("Abílio Almeida");
             e.setSenha("abilio123");
+            e.setTipo(1);
             e.getCursosMatriculados().add(cu);
             cu.getMatriculados().add(e);
-
-
+            
             Estudante e2 = new Estudante();
             e2.setCpf("10120230355");
             e2.setEmail("estudante2@email.com");
             e2.setMatricula("225544");
             e2.setNome("Bruno Barbosa");
             e2.setSenha("senhadificil");
+            e2.setTipo(1);
             e2.getCursosSolicitados().add(cu);
             cu.getSolicitantes().add(e2);
-            
-            
+
             cubl.save(cu);
             out.println("\n- Add Curso: " + cu);
             cbl.save(c);

@@ -28,7 +28,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class PessoaBean implements PessoaBeanLocal {
-    
+
     @PersistenceContext
     EntityManager em;
     
@@ -66,5 +66,5 @@ public class PessoaBean implements PessoaBeanLocal {
         return (Pessoa) q.getSingleResult();
     }
 
-    
+
 }

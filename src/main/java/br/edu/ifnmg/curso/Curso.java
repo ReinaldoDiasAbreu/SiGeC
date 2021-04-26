@@ -42,7 +42,7 @@ import javax.persistence.Temporal;
  * @author alex
  */
 
-@Entity
+@Entity(name = "curso")
 @Table(name = "tbl_curso")
 @NamedQueries({
     @NamedQuery(

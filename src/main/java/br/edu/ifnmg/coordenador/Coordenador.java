@@ -34,7 +34,7 @@ import javax.persistence.Table;
  * @author alex
  */
 
-@Entity
+@Entity(name = "coordenador")
 @Table(name = "tbl_coordenador")
 @NamedQueries({
     @NamedQuery(
@@ -48,8 +48,8 @@ import javax.persistence.Table;
         query = "SELECT c FROM coordenador c WHERE c.codigo = :codigo"),
     @NamedQuery(
         name = "Coordenador.findCursosCriados",
-        query = "SELECT cs FROM curso cs " + 
-                "WHERE cs.coordenador_id = :id")
+        query = "SELECT cc FROM coordenador c " + 
+                "JOIN c.cursosCriados cc")
 })
 
 public class Coordenador extends Pessoa implements Serializable {

@@ -38,7 +38,7 @@ import javax.persistence.Table;
  * @author alex
  */
 
-@Entity
+@Entity(name = "estudante")
 @Table(name = "tbl_estudante")
 
 @NamedQueries({
@@ -56,13 +56,13 @@ import javax.persistence.Table;
     ),
     @NamedQuery(
             name = "Estudante.findAllCursosMatriculados",
-            query = "SELECT c FROM curso c "
-                    + "JOIN c.matriculados m WHERE m.id = :id"
+            query = "SELECT c FROM estudante e "
+                    + "JOIN e.cursosMatriculados c"
     ),
     @NamedQuery(
             name = "Estudante.findCursosSolicitados",
-            query = "SELECT c FROM curso c "
-                    + "JOIN c.solicitados s WHERE s.id = :id"
+            query = "SELECT c FROM estudante e "
+                    + "JOIN e.cursosSolicitados c"
     )
 })
 
