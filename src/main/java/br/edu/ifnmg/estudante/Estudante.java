@@ -165,9 +165,11 @@ public class Estudante extends Pessoa implements Serializable {
         return true;
     }
 
+    
+    //</editor-fold>
+
     @Override
     public String toString() {
-        return "br.edu.ifnmg.sigec.entity.Estudante[ id=" + getId() + " ]";
+        return "Estudante{" + "cpf=" + cpf + ", turma=" + turma + ", matricula=" + matricula + '}';
     }
-    //</editor-fold>
 }
