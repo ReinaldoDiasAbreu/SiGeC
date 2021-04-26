@@ -12,36 +12,36 @@
             <h:form> 
                 <div class="register-field">
                     <h:outputLabel for="input-nome" value="Nome:" />
-                        <h:inputText id="input-nome" required="true" >
+                        <h:inputText id="input-nome" required="true" value="#{coordenadorBean.coordenador.nome}">
                     </h:inputText>
                 </div>
 
                 <div class="register-field">
                     <h:outputLabel for="input-email" value="E-mail institucional:" />
-                        <h:inputText id="input-email" required="true" >
+                        <h:inputText id="input-email" required="true" value="#{coordenadorBean.coordenador.email}">
                         <h:outputText>@ifnmg.edu.br</h:outputText>
                     </h:inputText>
                 </div>
 
                 <div class="register-field">
                     <h:outputLabel for="input-codigo" value="Código:" />
-                        <h:inputText id="input-codigo" required="true" >
+                        <h:inputText id="input-codigo" required="true" value="#{coordenadorBean.coordenador.codigo}">
                     </h:inputText>
                 </div>
 
                 <div class="register-field">
                     <h:outputLabel for="input-password" value="Senha:" />
-                        <h:inputText id="input-password" required="true" >
+                        <h:inputText id="input-password" required="true" value="#{coordenadorBean.senha1}">
                     </h:inputText>
                 </div>
 
                 <div class="register-field">
                     <h:outputLabel for="input-password2" value="Confirme a senha:" />
-                        <h:inputText id="input-password2" required="true" >
+                        <h:inputText id="input-password2" required="true" value="#{coordenadorBean.senha2}">
                     </h:inputText>
                 </div>
                  
-                <h:button value="Cadastrar" />
+                <h:commandLink action="#{coordenadorBean.save()}"> Salvar </h:commandLink>
             </h:form>
 
         </div>

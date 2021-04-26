@@ -16,10 +16,62 @@
  */
 package br.edu.ifnmg.coordenador;
 
+import java.io.Serializable;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  *
  * @author Reinaldo Junio Dias de Abreu <rjdda at aluno.ifnmg.edu.br>
  */
-public class CoordenadorServiceBean {
+@Named(value = "coordenadorBean")
+@ViewScoped
+public class CoordenadorServiceBean implements Serializable {
     
+    @Inject
+    private CoordenadorBeanLocal coordenadorlocal;
+    
+    private Coordenador coordenador;
+    
+    private String senha1;
+    private String senha2;
+
+    public CoordenadorServiceBean() {
+        coordenador = new Coordenador();
+    }
+
+    public Coordenador getCoordenador() {
+        return coordenador;
+    }
+
+    public void setCoordenador(Coordenador coordenador) {
+        this.coordenador = coordenador;
+    }
+    
+    public void save(){
+        coordenador.setTipo(0);
+        
+        if(senha1.equals(senha2)){
+            coordenador.setSenha(senha1);
+        }
+        
+        coordenadorlocal.save(coordenador);
+    }
+
+    public String getSenha1() {
+        return senha1;
+    }
+
+    public void setSenha1(String senha1) {
+        this.senha1 = senha1;
+    }
+
+    public String getSenha2() {
+        return senha2;
+    }
+
+    public void setSenha2(String senha2) {
+        this.senha2 = senha2;
+    }
 }
