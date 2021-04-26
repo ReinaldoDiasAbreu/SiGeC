@@ -12,12 +12,46 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-/* 
+along with this program.  If not, see http://www.gnu.org/licenses/.
+/
+/ 
     Created on : 23 de abr de 2021, 17:02:18
     Author     : alex
 */
 
 @import 'root.css';
 
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 700px;
+
+    border: 1px solid black;
+
+    margin: 200px auto;
+    padding: 10px;
+}
+
+.register-field {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    border: 1px solid blue;
+}
+
+.register-field > label {
+    width: 30%;
+
+    text-align: left;
+}
+
+.register-field > input {
+    width: 70%;
+}
