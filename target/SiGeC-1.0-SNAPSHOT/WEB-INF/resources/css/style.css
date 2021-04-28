@@ -36,6 +36,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     margin-right: 10px;
 }
 
+#lang-options > span > img {
+    height: 10px;
+}
+
 body {
     background-color: var(--white);
     
@@ -45,7 +49,7 @@ body {
 #login-box {
     margin: 200px auto;
     
-    height: 400px;
+    height: 300px;
     width: 400px;
 }
 
@@ -57,6 +61,14 @@ body {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+}
+
+#login-box > form > div > div > input, #login-box > form > div > button {
+    width: 100%;
+}
+
+#login-box > img {
+    width: 90%;
 }
 
 #login-box > form > * {
@@ -71,10 +83,6 @@ body {
     width: 100%;
     
     font-size: 1.5em;
-}
-
-.login-field > label {
-    margin-bottom: 10px;
 }
 
 .login-field > input {

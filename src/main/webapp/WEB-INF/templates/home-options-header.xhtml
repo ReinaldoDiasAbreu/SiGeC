@@ -1,13 +1,14 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
     <div id="home-header">
         <div id="lang-options">
-            <span>Português</span>
+            <span><h:graphicImage library="img" name="brasil.png"/> Português</span>
             <span>|</span>
-            <span>English</span>
+            <span><h:graphicImage library="img" name="usa.png"/> English</span>
             <span>|</span>
-            <span>Espanõl</span>
+            <span><h:graphicImage library="img" name="espanha.png"/> Espanõl</span>
         </div>
-        <span>Sobre</span>
+        <span><p:commandLink value = "Sobre" action = "login.xhtml" /> </span>
     </div>
 </ui:composition>
