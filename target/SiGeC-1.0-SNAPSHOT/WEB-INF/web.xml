@@ -39,10 +39,10 @@
     </welcome-file-list>
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
-        <location>/errors/exception.xhtml</location>
+        <location>/WEB-INF/errors/exception.xhtml</location>
         <error-code>404</error-code>
-        <location>/errors/not-found.xhtml</location>
+        <location>/WEB-INF/errors/not-found.xhtml</location>
         <error-code>500</error-code>
-        <location>/errors/server-error.xhtml</location>
+        <location>/WEB-INF/errors/server-error.xhtml</location>
     </error-page>
 </web-app>

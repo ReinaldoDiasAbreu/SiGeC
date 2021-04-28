@@ -16,20 +16,12 @@
                         <p:password id="password" />
                     </div>
                     <div class="actions">
-                        <p:commandLink value = "Esqueci minha senha" action = "login.xhtml" /> 
+                        <p:commandLink value = "Recuperar senha" action = "login.xhtml" /> 
                     </div>
                 </div>
                 
-                <div class="bottom-options">
-                    <p:commandButton id="login-button"  styleClass="ui-button-success" value="Entrar" action="login.xhtml" />
-                
-                    <div class="actions">
-                        <p:commandLink value = "Cadastrar" action = "login.xhtml" /> 
-                        <p:commandLink value = "Verificar código" action = "login.xhtml" /> 
-                    </div>
-                </div>
-                
-                
+
+                <p:commandButton id="login-button"  styleClass="ui-button-success" value="Entrar" action="login.xhtml" />
             </h:form>
     </div>
 </ui:composition>

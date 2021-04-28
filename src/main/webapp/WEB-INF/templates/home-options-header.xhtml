@@ -1,14 +1,33 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui">
-    <div id="home-header">
-        <div id="lang-options">
-            <span><h:graphicImage library="img" name="brasil.png"/> Português</span>
-            <span>|</span>
-            <span><h:graphicImage library="img" name="usa.png"/> English</span>
-            <span>|</span>
-            <span><h:graphicImage library="img" name="espanha.png"/> Espanõl</span>
-        </div>
-        <span><p:commandLink value = "Sobre" action = "login.xhtml" /> </span>
-    </div>
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form>
+        <p:growl id="messages"/>
+
+        <p:menubar>
+            <p:menuitem value="Página Inicial" icon="pi pi-fw pi-home"/>
+
+            <p:submenu label="Cadastro" icon="pi pi-fw pi-user-plus">
+                <p:menuitem value="Aluno" icon="pi pi-fw pi-book"/>
+                <p:menuitem value="Coordenador" icon="pi pi-fw pi-cog"/>
+            </p:submenu>
+
+            <p:menuitem value="Verificar código" icon="pi pi-fw pi-ticket"/>
+            
+            <p:menuitem value="Sobre" icon="pi pi-fw pi-info-circle"/>
+
+            <p:submenu label="Linguagem" icon="pi pi-fw pi-globe">
+                <p:menuitem>
+                    <h:graphicImage class="img-icon" library="img" name="brasil.png"/> Português
+                </p:menuitem>
+                <p:menuitem>
+                    <h:graphicImage class="img-icon" library="img" name="usa.png"/> English
+                </p:menuitem>
+                <p:menuitem>
+                    <h:graphicImage class="img-icon" library="img" name="espanha.png"/> Español
+                </p:menuitem>
+            </p:submenu>
+        </p:menubar>
+    </h:form>
 </ui:composition>
