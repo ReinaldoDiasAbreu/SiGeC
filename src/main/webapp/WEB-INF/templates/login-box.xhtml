@@ -1,27 +1,37 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
      <div id="login-box">
+         <h:graphicImage library="img" name="logo.png"/>
             <h:form>
-                <h:graphicImage library="img" name="logo.png"/>
-                <div class="login-field">
-                    <h:outputLabel for="login" value="Login:" />
-                        <h:inputText id="login" required="true" >
-                    </h:inputText>
+                <div class="p-field p-grid">
+                    <label for="email">E-mail</label>
+                    <div class="p-col">
+                        <p:inputText id="email" type="text" />
+                    </div>
+                </div>
+                <div class="p-field p-grid">
+                    <label for="password">Senha</label>
+                    <div class="p-col">
+                        <p:password id="password" />
+                    </div>
+                    <div class="actions">
+                        <p:commandLink value = "Esqueci minha senha" action = "login.xhtml" /> 
+                    </div>
                 </div>
                 
-                <div class="login-field">
-                    <h:outputLabel for="password" value="Senha:" />
-                        <h:inputText id="password" required="true" >
-                    </h:inputText>
+                
+                
+                <div class="bottom-options">
+                    <p:commandButton id="login-button"  styleClass="ui-button-success" value="Entrar" action="login.xhtml" />
+                
+                    <div class="actions">
+                        <p:commandLink value = "Cadastrar" action = "login.xhtml" /> 
+                        <p:commandLink value = "Verificar código" action = "login.xhtml" /> 
+                    </div>
                 </div>
-                <div class="actions">
-                    <h:commandLink value = "Esqueci minha senha" action = "login.xhtml" /> 
-                </div>
-                <h:commandButton id="login-button" value="Entrar" action="login.xhtml" />
-                <div class="actions">
-                    <h:commandLink value = "Cadastrar" action = "login.xhtml" /> 
-                    <h:commandLink value = "Verificar código" action = "login.xhtml" /> 
-                </div>
+                
+                
             </h:form>
-        </div>
+    </div>
 </ui:composition>
