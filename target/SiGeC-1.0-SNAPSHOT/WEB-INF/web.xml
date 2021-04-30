@@ -35,14 +35,14 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
+        <welcome-file>aluno/painel.xhtml</welcome-file>
     </welcome-file-list>
-    <error-page>
+    <!--<error-page>
         <exception-type>java.lang.Exception</exception-type>
         <location>/WEB-INF/errors/exception.xhtml</location>
         <error-code>404</error-code>
         <location>/WEB-INF/errors/not-found.xhtml</location>
         <error-code>500</error-code>
         <location>/WEB-INF/errors/server-error.xhtml</location>
-    </error-page>
+    </error-page>-->
 </web-app>

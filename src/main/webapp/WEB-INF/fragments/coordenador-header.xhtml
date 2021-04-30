@@ -1,0 +1,20 @@
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form>
+        <p:growl id="messages"/>
+
+        <p:menubar>
+            <p:menuitem value="Meus cursos" icon="pi pi-fw pi-list"/>
+            <p:menuitem value="Novo curso" icon="pi pi-fw pi-plus-circle"/>
+            <p:menuitem value="Verificar código" icon="pi pi-fw pi-ticket"/>
+
+            <p:divider layout="vertical"/>
+
+            <f:facet name="options">
+                <p:button value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+            </f:facet>
+        </p:menubar>
+    </h:form>
+</ui:composition>
