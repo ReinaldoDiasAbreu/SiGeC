@@ -139,6 +139,7 @@ public class FakeDataServlet extends HttpServlet {
             cu.setCargaHoraria(20);
             cu.setConcluido(false);
             cu.setCriador(c);
+            c.getCursosCriados().add(cu);
             cu.setDataFim(new Date());
             cu.setDataInicio(new Date());
             cu.setLocalizacao("Laboratório de TI 1");
@@ -151,6 +152,7 @@ public class FakeDataServlet extends HttpServlet {
             cu2.setCargaHoraria(20);
             cu2.setConcluido(false);
             cu2.setCriador(c);
+            c.getCursosCriados().add(cu2);
             cu2.setDataFim(new Date());
             cu2.setDataInicio(new Date());
             cu2.setLocalizacao("Laboratório de Física");
@@ -163,6 +165,7 @@ public class FakeDataServlet extends HttpServlet {
             cu3.setCargaHoraria(30);
             cu3.setConcluido(false);
             cu3.setCriador(c2);
+            c2.getCursosCriados().add(cu3);
             cu3.setDataFim(new Date());
             cu3.setDataInicio(new Date());
             cu3.setLocalizacao("Laboratório de TI 2");
@@ -175,6 +178,7 @@ public class FakeDataServlet extends HttpServlet {
             cu4.setCargaHoraria(8);
             cu4.setConcluido(false);
             cu4.setCriador(c3);
+            c3.getCursosCriados().add(cu4);
             cu4.setDataFim(new Date());
             cu4.setDataInicio(new Date());
             cu4.setLocalizacao("Laboratório de TI");
@@ -187,6 +191,7 @@ public class FakeDataServlet extends HttpServlet {
             cu5.setCargaHoraria(12);
             cu5.setConcluido(false);
             cu5.setCriador(c4);
+            c4.getCursosCriados().add(cu5);
             cu5.setDataFim(new Date());
             cu5.setDataInicio(new Date());
             cu5.setLocalizacao("Laboratório de TI 3");
@@ -199,6 +204,7 @@ public class FakeDataServlet extends HttpServlet {
             cu6.setCargaHoraria(20);
             cu6.setConcluido(false);
             cu6.setCriador(c4);
+            c4.getCursosCriados().add(cu6);
             cu6.setDataFim(new Date());
             cu6.setDataInicio(new Date());
             cu6.setLocalizacao("Laboratório de TI");
@@ -211,6 +217,7 @@ public class FakeDataServlet extends HttpServlet {
             cu7.setCargaHoraria(20);
             cu7.setConcluido(false);
             cu7.setCriador(c6);
+            c6.getCursosCriados().add(cu7);
             cu7.setDataFim(new Date());
             cu7.setDataInicio(new Date());
             cu7.setLocalizacao("Laboratório de TI 2");
@@ -223,6 +230,7 @@ public class FakeDataServlet extends HttpServlet {
             cu8.setCargaHoraria(6);
             cu8.setConcluido(false);
             cu8.setCriador(c6);
+            c6.getCursosCriados().add(cu8);
             cu8.setDataFim(new Date());
             cu8.setDataInicio(new Date());
             cu8.setLocalizacao("Laboratório de TI 3");
@@ -235,6 +243,7 @@ public class FakeDataServlet extends HttpServlet {
             cu9.setCargaHoraria(8);
             cu9.setConcluido(false);
             cu9.setCriador(c6);
+            c6.getCursosCriados().add(cu9);
             cu9.setDataFim(new Date());
             cu9.setDataInicio(new Date());
             cu9.setLocalizacao("Laboratório de TI 2");
@@ -247,6 +256,7 @@ public class FakeDataServlet extends HttpServlet {
             cu10.setCargaHoraria(16);
             cu10.setConcluido(true);
             cu10.setCriador(c7);
+            c7.getCursosCriados().add(cu10);
             cu10.setDataFim(new Date());
             cu10.setDataInicio(new Date());
             cu10.setLocalizacao("Laboratório de Eletrônica");
@@ -259,6 +269,7 @@ public class FakeDataServlet extends HttpServlet {
             cu11.setCargaHoraria(12);
             cu11.setConcluido(true);
             cu11.setCriador(c8);
+            c8.getCursosCriados().add(cu11);
             cu11.setDataFim(new Date());
             cu11.setDataInicio(new Date());
             cu11.setLocalizacao("Laboratório de TI 1");
@@ -271,6 +282,7 @@ public class FakeDataServlet extends HttpServlet {
             cu12.setCargaHoraria(12);
             cu12.setConcluido(false);
             cu12.setCriador(c8);
+            c8.getCursosCriados().add(cu12);
             cu12.setDataFim(new Date());
             cu12.setDataInicio(new Date());
             cu12.setLocalizacao("Laboratório de TI 3");
@@ -283,6 +295,7 @@ public class FakeDataServlet extends HttpServlet {
             cu13.setCargaHoraria(4);
             cu13.setConcluido(false);
             cu13.setCriador(c9);
+            c9.getCursosCriados().add(cu13);
             cu13.setDataFim(new Date());
             cu13.setDataInicio(new Date());
             cu13.setLocalizacao("Laboratório de TI 3");
@@ -295,6 +308,7 @@ public class FakeDataServlet extends HttpServlet {
             cu14.setCargaHoraria(16);
             cu14.setConcluido(false);
             cu14.setCriador(c9);
+            c9.getCursosCriados().add(cu14);
             cu14.setDataFim(new Date());
             cu14.setDataInicio(new Date());
             cu14.setLocalizacao("Laboratório de TI 2");
@@ -307,6 +321,7 @@ public class FakeDataServlet extends HttpServlet {
             cu15.setCargaHoraria(12);
             cu15.setConcluido(true);
             cu15.setCriador(c9);
+            c9.getCursosCriados().add(cu15);
             cu15.setDataFim(new Date());
             cu15.setDataInicio(new Date());
             cu15.setLocalizacao("Laboratório de TI 1");
@@ -319,6 +334,7 @@ public class FakeDataServlet extends HttpServlet {
             cu16.setCargaHoraria(14);
             cu16.setConcluido(false);
             cu16.setCriador(c9);
+            c9.getCursosCriados().add(cu16);
             cu16.setDataFim(new Date());
             cu16.setDataInicio(new Date());
             cu16.setLocalizacao("Auditório");
@@ -331,6 +347,7 @@ public class FakeDataServlet extends HttpServlet {
             cu17.setCargaHoraria(18);
             cu17.setConcluido(false);
             cu17.setCriador(c);
+            c.getCursosCriados().add(cu17);
             cu17.setDataFim(new Date());
             cu17.setDataInicio(new Date());
             cu17.setLocalizacao("Laboratório de TI 2");
@@ -343,6 +360,7 @@ public class FakeDataServlet extends HttpServlet {
             cu18.setCargaHoraria(4);
             cu18.setConcluido(true);
             cu18.setCriador(c4);
+            c4.getCursosCriados().add(cu18);
             cu18.setDataFim(new Date());
             cu18.setDataInicio(new Date());
             cu18.setLocalizacao("Auditório");
@@ -369,7 +387,7 @@ public class FakeDataServlet extends HttpServlet {
             e2.setNome("Bruno Barbosa");
             e2.setSenha("senhadificil");
             e2.setTipo(1);
-            e.setTurma(2015);
+            e2.setTurma(2015);
             e2.getCursosSolicitados().add(cu);
             cu.getSolicitantes().add(e2);
             
@@ -380,7 +398,7 @@ public class FakeDataServlet extends HttpServlet {
             e3.setNome("Caio Castro");
             e3.setSenha("senhadocaio");
             e3.setTipo(1);
-            e.setTurma(2015);
+            e3.setTurma(2015);
             
             Estudante e4 = new Estudante();
             e4.setCpf("32222311202");
@@ -389,7 +407,7 @@ public class FakeDataServlet extends HttpServlet {
             e4.setNome("Danilo Dantas");
             e4.setSenha("wassaw");
             e4.setTipo(1);
-            e.setTurma(2015);
+            e4.setTurma(2015);
             
             Estudante e5 = new Estudante();
             e5.setCpf("11455233688");
@@ -398,7 +416,7 @@ public class FakeDataServlet extends HttpServlet {
             e5.setNome("Esdras Elias");
             e5.setSenha("gaivotamarinha");
             e5.setTipo(1);
-            e.setTurma(2016);
+            e5.setTurma(2016);
             
             Estudante e6 = new Estudante();
             e6.setCpf("74785828691");
@@ -407,7 +425,7 @@ public class FakeDataServlet extends HttpServlet {
             e6.setNome("Fábio França");
             e6.setSenha("minhasenha");
             e6.setTipo(1);
-            e.setTurma(2016);
+            e6.setTurma(2016);
             
             Estudante e7 = new Estudante();
             e7.setCpf("11122200094");
@@ -416,7 +434,7 @@ public class FakeDataServlet extends HttpServlet {
             e7.setNome("Gabriel Gafanhoto");
             e7.setSenha("00fdfdflfn");
             e7.setTipo(1);
-            e.setTurma(2016);
+            e7.setTurma(2016);
             
             Estudante e8 = new Estudante();
             e8.setCpf("12548965230");
@@ -425,7 +443,7 @@ public class FakeDataServlet extends HttpServlet {
             e8.setNome("Hélio Hilário");
             e8.setSenha("sd09ds0ds");
             e8.setTipo(1);
-            e.setTurma(2016);
+            e8.setTurma(2016);
             
             Estudante e9 = new Estudante();
             e9.setCpf("48352655412");
@@ -434,7 +452,7 @@ public class FakeDataServlet extends HttpServlet {
             e9.setNome("Igor Igor");
             e9.setSenha("df64df16d4f16");
             e9.setTipo(1);
-            e.setTurma(2016);
+            e9.setTurma(2016);
             
             Estudante e10 = new Estudante();
             e10.setCpf("20220220257");
@@ -443,7 +461,7 @@ public class FakeDataServlet extends HttpServlet {
             e10.setNome("Katarina Kruger");
             e10.setSenha("d0f9dvf0d9v");
             e10.setTipo(1);
-            e.setTurma(2016);
+            e10.setTurma(2016);
             
             Estudante e11 = new Estudante();
             e11.setCpf("74585896952");
@@ -452,7 +470,7 @@ public class FakeDataServlet extends HttpServlet {
             e11.setNome("Letícia Lima");
             e11.setSenha("vdfm0dvf90vfd");
             e11.setTipo(1);
-            e.setTurma(2016);
+            e11.setTurma(2016);
             
             Estudante e12 = new Estudante();
             e12.setCpf("89856523246");
@@ -461,7 +479,7 @@ public class FakeDataServlet extends HttpServlet {
             e12.setNome("Maria Macedo");
             e12.setSenha("d2j3d9nd");
             e12.setTipo(1);
-            e.setTurma(2016);
+            e12.setTurma(2016);
             
             Estudante e13 = new Estudante();
             e13.setCpf("69854123050");
@@ -470,7 +488,7 @@ public class FakeDataServlet extends HttpServlet {
             e13.setNome("Nayara Nogueira");
             e13.setSenha("179df91df19");
             e13.setTipo(1);
-            e.setTurma(2016);
+            e13.setTurma(2016);
             
             Estudante e14 = new Estudante();
             e14.setCpf("85524495127");
@@ -479,7 +497,7 @@ public class FakeDataServlet extends HttpServlet {
             e14.setNome("Otávio Ollosa");
             e14.setSenha("c8mdf89df9n8df");
             e14.setTipo(1);
-            e.setTurma(2017);
+            e14.setTurma(2017);
             
             Estudante e15 = new Estudante();
             e15.setCpf("44455521459");
@@ -488,7 +506,7 @@ public class FakeDataServlet extends HttpServlet {
             e15.setNome("Felipe Feijão");
             e15.setSenha("fdf09df09dfn0df");
             e15.setTipo(1);
-            e.setTurma(2017);
+            e15.setTurma(2017);
             
             Estudante e16 = new Estudante();
             e16.setCpf("55699823321");
@@ -497,7 +515,7 @@ public class FakeDataServlet extends HttpServlet {
             e16.setNome("João Januário");
             e16.setSenha("ldldldldldlld");
             e16.setTipo(1);
-            e.setTurma(2017);
+            e16.setTurma(2017);
             
             Estudante e17 = new Estudante();
             e17.setCpf("99633688547");
@@ -506,7 +524,7 @@ public class FakeDataServlet extends HttpServlet {
             e17.setNome("Jacinto Ventania");
             e17.setSenha("sd98sdn89sd89");
             e17.setTipo(1);
-            e.setTurma(2017);
+            e17.setTurma(2017);
             
             Estudante e18 = new Estudante();
             e18.setCpf("74114774114");
@@ -515,7 +533,7 @@ public class FakeDataServlet extends HttpServlet {
             e18.setNome("Marta Wayne");
             e18.setSenha("sd09nds0");
             e18.setTipo(1);
-            e.setTurma(2017);
+            e18.setTurma(2017);
             
             Estudante e19 = new Estudante();
             e19.setCpf("95147852365");
@@ -524,7 +542,7 @@ public class FakeDataServlet extends HttpServlet {
             e19.setNome("Lucas Lúcido");
             e19.setSenha("615fd156dfdf156");
             e19.setTipo(1);
-            e.setTurma(2017);
+            e19.setTurma(2017);
             
             Estudante e20 = new Estudante();
             e20.setCpf("44455899365");
@@ -533,7 +551,7 @@ public class FakeDataServlet extends HttpServlet {
             e20.setNome("Luísa Lima");
             e20.setSenha("0dff090dfn9f0");
             e20.setTipo(1);
-            e.setTurma(2017);
+            e20.setTurma(2017);
             
             Estudante e21 = new Estudante();
             e21.setCpf("85885858525");
@@ -542,7 +560,7 @@ public class FakeDataServlet extends HttpServlet {
             e21.setNome("Laís Lima");
             e21.setSenha("g146gffg");
             e21.setTipo(1);
-            e.setTurma(2017);
+            e21.setTurma(2017);
             
             Estudante e22 = new Estudante();
             e22.setCpf("92584152687");
@@ -551,7 +569,7 @@ public class FakeDataServlet extends HttpServlet {
             e22.setNome("Bárbara Barbosa");
             e22.setSenha("44fd45dfdf");
             e22.setTipo(1);
-            e.setTurma(2017);
+            e22.setTurma(2017);
             
             Estudante e23 = new Estudante();
             e23.setCpf("40563525297");
@@ -560,7 +578,7 @@ public class FakeDataServlet extends HttpServlet {
             e23.setNome("Bianca Barbosa");
             e23.setSenha("6vbc465df4df56df456");
             e23.setTipo(1);
-            e.setTurma(2018);
+            e23.setTurma(2018);
             
             Estudante e24 = new Estudante();
             e24.setCpf("70740410158");
@@ -569,7 +587,7 @@ public class FakeDataServlet extends HttpServlet {
             e24.setNome("Bruna Barbosa");
             e24.setSenha("7fg78fg78fg");
             e24.setTipo(1);
-            e.setTurma(2018);
+            e24.setTurma(2018);
             
             Estudante e25 = new Estudante();
             e25.setCpf("85214796325");
@@ -578,7 +596,7 @@ public class FakeDataServlet extends HttpServlet {
             e25.setNome("Baltazar Barbosa");
             e25.setSenha("df7df78df78");
             e25.setTipo(1);
-            e.setTurma(2018);
+            e25.setTurma(2018);
             
             Estudante e26 = new Estudante();
             e26.setCpf("20200000014");
@@ -587,7 +605,7 @@ public class FakeDataServlet extends HttpServlet {
             e26.setNome("Bilbo Barbosa");
             e26.setSenha("fg8f8f8f8");
             e26.setTipo(1);
-            e.setTurma(2018);
+            e26.setTurma(2018);
             
             Estudante e27 = new Estudante();
             e27.setCpf("45632178985");
@@ -596,7 +614,7 @@ public class FakeDataServlet extends HttpServlet {
             e27.setNome("Billy Barbosa");
             e27.setSenha("2kl12kl12kl12");
             e27.setTipo(1);
-            e.setTurma(2018);
+            e27.setTurma(2018);
             
             Estudante e28 = new Estudante();
             e28.setCpf("45606544588");
@@ -605,7 +623,7 @@ public class FakeDataServlet extends HttpServlet {
             e28.setNome("Andy Andrade");
             e28.setSenha("rc82r9f28c");
             e28.setTipo(1);
-            e.setTurma(2018);
+            e28.setTurma(2018);
             
             Estudante e29 = new Estudante();
             e29.setCpf("96325874105");
@@ -614,7 +632,7 @@ public class FakeDataServlet extends HttpServlet {
             e29.setNome("Walter Valério");
             e29.setSenha("23d1635d6231d");
             e29.setTipo(1);
-            e.setTurma(2019);
+            e29.setTurma(2019);
             
             Estudante e30 = new Estudante();
             e30.setCpf("90584675244");
@@ -623,7 +641,7 @@ public class FakeDataServlet extends HttpServlet {
             e30.setNome("Lucília Lima");
             e30.setSenha("limakakakakaka");
             e30.setTipo(1);
-            e.setTurma(2019);
+            e30.setTurma(2019);
             
             Estudante e31 = new Estudante();
             e31.setCpf("77844511252");
@@ -632,7 +650,7 @@ public class FakeDataServlet extends HttpServlet {
             e31.setNome("Alberto Gilberto");
             e31.setSenha("45sd45sd45sd45sd5");
             e31.setTipo(1);
-            e.setTurma(2019);
+            e31.setTurma(2019);
             
             Estudante e32 = new Estudante();
             e32.setCpf("58541436352");
@@ -641,7 +659,7 @@ public class FakeDataServlet extends HttpServlet {
             e32.setNome("Hugo Manoel");
             e32.setSenha("d3154d3154d");
             e32.setTipo(1);
-            e.setTurma(2019);
+            e32.setTurma(2019);
             
             Estudante e33 = new Estudante();
             e33.setCpf("44025066032");
@@ -650,7 +668,7 @@ public class FakeDataServlet extends HttpServlet {
             e33.setNome("Eurico Eustáquio");
             e33.setSenha("df45df45df45df45");
             e33.setTipo(1);
-            e.setTurma(2019);
+            e33.setTurma(2019);
             
             Estudante e34 = new Estudante();
             e34.setCpf("77744436352");
@@ -659,8 +677,494 @@ public class FakeDataServlet extends HttpServlet {
             e34.setNome("Júlia Barbosa");
             e34.setSenha("dfdff45df45");
             e34.setTipo(1);
-            e.setTurma(2019);
+            e34.setTurma(2019);
+
+            Estudante e35 = new Estudante();
+            e35.setCpf("33025066032");
+            e35.setEmail("wasd@email.com");
+            e35.setMatricula("225412");
+            e35.setNome("Irineu Eustáquio");
+            e35.setSenha("vocenaosabenemeu");
+            e35.setTipo(1);
+            e35.setTurma(2019);
             
+            Estudante e36 = new Estudante();
+            e36.setCpf("55744436352");
+            e36.setEmail("abcd@email.com");
+            e36.setMatricula("225714");
+            e36.setNome("Maria Florência");
+            e36.setSenha("joseclaudio");
+            e36.setTipo(1);
+            e36.setTurma(2019);
+            
+            
+            cu.getMatriculados().add(e);
+            e.getCursosMatriculados().add(cu);
+            cu.getMatriculados().add(e2);
+            e2.getCursosMatriculados().add(cu);
+            cu.getMatriculados().add(e3);
+            e3.getCursosMatriculados().add(cu);
+            cu.getMatriculados().add(e4);
+            e4.getCursosMatriculados().add(cu);
+            cu.getMatriculados().add(e5);
+            e5.getCursosMatriculados().add(cu);
+            cu.getMatriculados().add(e6);
+            e6.getCursosMatriculados().add(cu);
+            
+            cu.getSolicitantes().add(e7);
+            e7.getCursosSolicitados().add(cu);
+            cu.getSolicitantes().add(e8);
+            e8.getCursosSolicitados().add(cu);
+            cu.getSolicitantes().add(e9);
+            e9.getCursosSolicitados().add(cu);
+            cu.getSolicitantes().add(e10);
+            e10.getCursosSolicitados().add(cu);
+            cu.getSolicitantes().add(e11);
+            e11.getCursosSolicitados().add(cu);
+            cu.getSolicitantes().add(e12);
+            e12.getCursosSolicitados().add(cu);
+            
+            cu2.getMatriculados().add(e7);
+            e7.getCursosMatriculados().add(cu2);
+            cu2.getMatriculados().add(e8);
+            e8.getCursosMatriculados().add(cu2);
+            cu2.getMatriculados().add(e9);
+            e9.getCursosMatriculados().add(cu2);
+            cu2.getMatriculados().add(e10);
+            e10.getCursosMatriculados().add(cu2);
+            cu2.getMatriculados().add(e11);
+            e11.getCursosMatriculados().add(cu2);
+            cu2.getMatriculados().add(e12);
+            e12.getCursosMatriculados().add(cu2);
+            
+            cu2.getSolicitantes().add(e);
+            e.getCursosSolicitados().add(cu2);
+            cu2.getSolicitantes().add(e2);
+            e2.getCursosSolicitados().add(cu2);
+            cu2.getSolicitantes().add(e3);
+            e3.getCursosSolicitados().add(cu2);
+            cu2.getSolicitantes().add(e4);
+            e4.getCursosSolicitados().add(cu2);
+            cu2.getSolicitantes().add(e5);
+            e5.getCursosSolicitados().add(cu2);
+            cu2.getSolicitantes().add(e6);
+            e6.getCursosSolicitados().add(cu2);
+
+            cu3.getMatriculados().add(e13);
+            e13.getCursosMatriculados().add(cu3);
+            cu3.getMatriculados().add(e14);
+            e14.getCursosMatriculados().add(cu3);
+            cu3.getMatriculados().add(e15);
+            e15.getCursosMatriculados().add(cu3);
+            cu3.getMatriculados().add(e16);
+            e16.getCursosMatriculados().add(cu3);
+            cu3.getMatriculados().add(e17);
+            e17.getCursosMatriculados().add(cu3);
+            cu3.getMatriculados().add(e18);
+            e18.getCursosMatriculados().add(cu3);
+            
+            cu3.getSolicitantes().add(e19);
+            e19.getCursosSolicitados().add(cu3);
+            cu3.getSolicitantes().add(e20);
+            e20.getCursosSolicitados().add(cu3);
+            cu3.getSolicitantes().add(e21);
+            e21.getCursosSolicitados().add(cu3);
+            cu3.getSolicitantes().add(e22);
+            e22.getCursosSolicitados().add(cu3);
+            cu3.getSolicitantes().add(e23);
+            e23.getCursosSolicitados().add(cu3);
+            cu3.getSolicitantes().add(e24);
+            e24.getCursosSolicitados().add(cu3);
+
+            cu4.getMatriculados().add(e19);
+            e19.getCursosMatriculados().add(cu4);
+            cu4.getMatriculados().add(e20);
+            e20.getCursosMatriculados().add(cu4);
+            cu4.getMatriculados().add(e21);
+            e21.getCursosMatriculados().add(cu4);
+            cu4.getMatriculados().add(e22);
+            e22.getCursosMatriculados().add(cu4);
+            cu4.getMatriculados().add(e23);
+            e23.getCursosMatriculados().add(cu4);
+            cu4.getMatriculados().add(e24);
+            e24.getCursosMatriculados().add(cu4);
+            
+            cu4.getSolicitantes().add(e13);
+            e13.getCursosSolicitados().add(cu4);
+            cu4.getSolicitantes().add(e14);
+            e14.getCursosSolicitados().add(cu4);
+            cu4.getSolicitantes().add(e15);
+            e15.getCursosSolicitados().add(cu4);
+            cu4.getSolicitantes().add(e16);
+            e16.getCursosSolicitados().add(cu4);
+            cu4.getSolicitantes().add(e17);
+            e17.getCursosSolicitados().add(cu4);
+            cu4.getSolicitantes().add(e18);
+            e18.getCursosSolicitados().add(cu4);
+
+            cu5.getMatriculados().add(e25);
+            e25.getCursosMatriculados().add(cu5);
+            cu5.getMatriculados().add(e26);
+            e26.getCursosMatriculados().add(cu5);
+            cu5.getMatriculados().add(e27);
+            e27.getCursosMatriculados().add(cu5);
+            cu5.getMatriculados().add(e28);
+            e28.getCursosMatriculados().add(cu5);
+            cu5.getMatriculados().add(e29);
+            e29.getCursosMatriculados().add(cu5);
+            cu5.getMatriculados().add(e30);
+            e30.getCursosMatriculados().add(cu5);
+            
+            cu5.getSolicitantes().add(e31);
+            e31.getCursosSolicitados().add(cu5);
+            cu5.getSolicitantes().add(e32);
+            e32.getCursosSolicitados().add(cu5);
+            cu5.getSolicitantes().add(e33);
+            e33.getCursosSolicitados().add(cu5);
+            cu5.getSolicitantes().add(e34);
+            e34.getCursosSolicitados().add(cu5);
+            cu5.getSolicitantes().add(e35);
+            e35.getCursosSolicitados().add(cu5);
+            cu5.getSolicitantes().add(e36);
+            e36.getCursosSolicitados().add(cu5);
+
+            cu6.getMatriculados().add(e31);
+            e31.getCursosMatriculados().add(cu6);
+            cu6.getMatriculados().add(e32);
+            e32.getCursosMatriculados().add(cu6);
+            cu6.getMatriculados().add(e33);
+            e33.getCursosMatriculados().add(cu6);
+            cu6.getMatriculados().add(e34);
+            e34.getCursosMatriculados().add(cu6);
+            cu6.getMatriculados().add(e35);
+            e35.getCursosMatriculados().add(cu6);
+            cu6.getMatriculados().add(e36);
+            e36.getCursosMatriculados().add(cu6);
+            
+            cu6.getSolicitantes().add(e25);
+            e25.getCursosSolicitados().add(cu6);
+            cu6.getSolicitantes().add(e26);
+            e26.getCursosSolicitados().add(cu6);
+            cu6.getSolicitantes().add(e27);
+            e27.getCursosSolicitados().add(cu6);
+            cu6.getSolicitantes().add(e28);
+            e28.getCursosSolicitados().add(cu6);
+            cu6.getSolicitantes().add(e29);
+            e29.getCursosSolicitados().add(cu6);
+            cu6.getSolicitantes().add(e30);
+            e30.getCursosSolicitados().add(cu6);
+
+            cu7.getMatriculados().add(e);
+            e.getCursosMatriculados().add(cu7);
+            cu7.getMatriculados().add(e2);
+            e2.getCursosMatriculados().add(cu7);
+            cu7.getMatriculados().add(e3);
+            e3.getCursosMatriculados().add(cu7);
+            cu7.getMatriculados().add(e4);
+            e4.getCursosMatriculados().add(cu7);
+            cu7.getMatriculados().add(e5);
+            e5.getCursosMatriculados().add(cu7);
+            cu7.getMatriculados().add(e6);
+            e6.getCursosMatriculados().add(cu7);
+            
+            cu7.getSolicitantes().add(e7);
+            e7.getCursosSolicitados().add(cu7);
+            cu7.getSolicitantes().add(e8);
+            e8.getCursosSolicitados().add(cu7);
+            cu7.getSolicitantes().add(e9);
+            e9.getCursosSolicitados().add(cu7);
+            cu7.getSolicitantes().add(e10);
+            e10.getCursosSolicitados().add(cu7);
+            cu7.getSolicitantes().add(e11);
+            e11.getCursosSolicitados().add(cu7);
+            cu7.getSolicitantes().add(e12);
+            e12.getCursosSolicitados().add(cu7);
+
+            cu8.getMatriculados().add(e7);
+            e7.getCursosMatriculados().add(cu8);
+            cu8.getMatriculados().add(e8);
+            e8.getCursosMatriculados().add(cu8);
+            cu8.getMatriculados().add(e9);
+            e9.getCursosMatriculados().add(cu8);
+            cu8.getMatriculados().add(e10);
+            e10.getCursosMatriculados().add(cu8);
+            cu8.getMatriculados().add(e11);
+            e11.getCursosMatriculados().add(cu8);
+            cu8.getMatriculados().add(e12);
+            e12.getCursosMatriculados().add(cu8);
+            
+            cu8.getSolicitantes().add(e);
+            e.getCursosSolicitados().add(cu8);
+            cu8.getSolicitantes().add(e2);
+            e2.getCursosSolicitados().add(cu8);
+            cu8.getSolicitantes().add(e3);
+            e3.getCursosSolicitados().add(cu8);
+            cu8.getSolicitantes().add(e4);
+            e4.getCursosSolicitados().add(cu8);
+            cu8.getSolicitantes().add(e5);
+            e5.getCursosSolicitados().add(cu8);
+            cu8.getSolicitantes().add(e6);
+            e6.getCursosSolicitados().add(cu8);
+
+            cu9.getMatriculados().add(e13);
+            e13.getCursosMatriculados().add(cu9);
+            cu9.getMatriculados().add(e14);
+            e14.getCursosMatriculados().add(cu9);
+            cu9.getMatriculados().add(e15);
+            e15.getCursosMatriculados().add(cu9);
+            cu9.getMatriculados().add(e16);
+            e16.getCursosMatriculados().add(cu9);
+            cu9.getMatriculados().add(e17);
+            e17.getCursosMatriculados().add(cu9);
+            cu9.getMatriculados().add(e18);
+            e18.getCursosMatriculados().add(cu9);
+            
+            cu9.getSolicitantes().add(e19);
+            e19.getCursosSolicitados().add(cu9);
+            cu9.getSolicitantes().add(e20);
+            e20.getCursosSolicitados().add(cu9);
+            cu9.getSolicitantes().add(e21);
+            e21.getCursosSolicitados().add(cu9);
+            cu9.getSolicitantes().add(e22);
+            e22.getCursosSolicitados().add(cu9);
+            cu9.getSolicitantes().add(e23);
+            e23.getCursosSolicitados().add(cu9);
+            cu9.getSolicitantes().add(e24);
+            e24.getCursosSolicitados().add(cu9);
+
+            cu10.getMatriculados().add(e19);
+            e19.getCursosMatriculados().add(cu10);
+            cu10.getMatriculados().add(e20);
+            e20.getCursosMatriculados().add(cu10);
+            cu10.getMatriculados().add(e21);
+            e21.getCursosMatriculados().add(cu10);
+            cu10.getMatriculados().add(e22);
+            e22.getCursosMatriculados().add(cu10);
+            cu10.getMatriculados().add(e23);
+            e23.getCursosMatriculados().add(cu10);
+            cu10.getMatriculados().add(e24);
+            e24.getCursosMatriculados().add(cu10);
+            
+            cu10.getSolicitantes().add(e13);
+            e13.getCursosSolicitados().add(cu10);
+            cu10.getSolicitantes().add(e14);
+            e14.getCursosSolicitados().add(cu10);
+            cu10.getSolicitantes().add(e15);
+            e15.getCursosSolicitados().add(cu10);
+            cu10.getSolicitantes().add(e16);
+            e16.getCursosSolicitados().add(cu10);
+            cu10.getSolicitantes().add(e17);
+            e17.getCursosSolicitados().add(cu10);
+            cu10.getSolicitantes().add(e18);
+            e18.getCursosSolicitados().add(cu10);
+
+            cu11.getMatriculados().add(e25);
+            e25.getCursosMatriculados().add(cu11);
+            cu11.getMatriculados().add(e26);
+            e26.getCursosMatriculados().add(cu11);
+            cu11.getMatriculados().add(e27);
+            e27.getCursosMatriculados().add(cu11);
+            cu11.getMatriculados().add(e28);
+            e28.getCursosMatriculados().add(cu11);
+            cu11.getMatriculados().add(e29);
+            e29.getCursosMatriculados().add(cu11);
+            cu11.getMatriculados().add(e30);
+            e30.getCursosMatriculados().add(cu11);
+            
+            cu11.getSolicitantes().add(e31);
+            e31.getCursosSolicitados().add(cu11);
+            cu11.getSolicitantes().add(e32);
+            e32.getCursosSolicitados().add(cu11);
+            cu11.getSolicitantes().add(e33);
+            e33.getCursosSolicitados().add(cu11);
+            cu11.getSolicitantes().add(e34);
+            e34.getCursosSolicitados().add(cu11);
+            cu11.getSolicitantes().add(e35);
+            e35.getCursosSolicitados().add(cu11);
+            cu11.getSolicitantes().add(e36);
+            e36.getCursosSolicitados().add(cu11);
+
+            cu12.getMatriculados().add(e31);
+            e31.getCursosMatriculados().add(cu12);
+            cu12.getMatriculados().add(e32);
+            e32.getCursosMatriculados().add(cu12);
+            cu12.getMatriculados().add(e33);
+            e33.getCursosMatriculados().add(cu12);
+            cu12.getMatriculados().add(e34);
+            e34.getCursosMatriculados().add(cu12);
+            cu12.getMatriculados().add(e35);
+            e35.getCursosMatriculados().add(cu12);
+            cu12.getMatriculados().add(e36);
+            e36.getCursosMatriculados().add(cu12);
+            
+            cu12.getSolicitantes().add(e25);
+            e25.getCursosSolicitados().add(cu12);
+            cu12.getSolicitantes().add(e26);
+            e26.getCursosSolicitados().add(cu12);
+            cu12.getSolicitantes().add(e27);
+            e27.getCursosSolicitados().add(cu12);
+            cu12.getSolicitantes().add(e28);
+            e28.getCursosSolicitados().add(cu12);
+            cu12.getSolicitantes().add(e29);
+            e29.getCursosSolicitados().add(cu12);
+            cu12.getSolicitantes().add(e30);
+            e30.getCursosSolicitados().add(cu12);
+
+            cu13.getMatriculados().add(e);
+            e.getCursosMatriculados().add(cu13);
+            cu13.getMatriculados().add(e2);
+            e2.getCursosMatriculados().add(cu13);
+            cu13.getMatriculados().add(e3);
+            e3.getCursosMatriculados().add(cu13);
+            cu13.getMatriculados().add(e4);
+            e4.getCursosMatriculados().add(cu13);
+            cu13.getMatriculados().add(e5);
+            e5.getCursosMatriculados().add(cu13);
+            cu13.getMatriculados().add(e6);
+            e6.getCursosMatriculados().add(cu13);
+            
+            cu13.getSolicitantes().add(e7);
+            e7.getCursosSolicitados().add(cu13);
+            cu13.getSolicitantes().add(e8);
+            e8.getCursosSolicitados().add(cu13);
+            cu13.getSolicitantes().add(e9);
+            e9.getCursosSolicitados().add(cu13);
+            cu13.getSolicitantes().add(e10);
+            e10.getCursosSolicitados().add(cu13);
+            cu13.getSolicitantes().add(e11);
+            e11.getCursosSolicitados().add(cu13);
+            cu13.getSolicitantes().add(e12);
+            e12.getCursosSolicitados().add(cu13);
+
+            cu14.getMatriculados().add(e7);
+            e7.getCursosMatriculados().add(cu14);
+            cu14.getMatriculados().add(e8);
+            e8.getCursosMatriculados().add(cu14);
+            cu14.getMatriculados().add(e9);
+            e9.getCursosMatriculados().add(cu14);
+            cu14.getMatriculados().add(e10);
+            e10.getCursosMatriculados().add(cu14);
+            cu14.getMatriculados().add(e11);
+            e11.getCursosMatriculados().add(cu14);
+            cu14.getMatriculados().add(e12);
+            e12.getCursosMatriculados().add(cu14);
+            
+            cu14.getSolicitantes().add(e);
+            e.getCursosSolicitados().add(cu14);
+            cu14.getSolicitantes().add(e2);
+            e2.getCursosSolicitados().add(cu14);
+            cu14.getSolicitantes().add(e3);
+            e3.getCursosSolicitados().add(cu14);
+            cu14.getSolicitantes().add(e4);
+            e4.getCursosSolicitados().add(cu14);
+            cu14.getSolicitantes().add(e5);
+            e5.getCursosSolicitados().add(cu14);
+            cu14.getSolicitantes().add(e6);
+            e6.getCursosSolicitados().add(cu14);
+
+            cu15.getMatriculados().add(e13);
+            e13.getCursosMatriculados().add(cu15);
+            cu15.getMatriculados().add(e14);
+            e14.getCursosMatriculados().add(cu15);
+            cu15.getMatriculados().add(e15);
+            e15.getCursosMatriculados().add(cu15);
+            cu15.getMatriculados().add(e16);
+            e16.getCursosMatriculados().add(cu15);
+            cu15.getMatriculados().add(e17);
+            e17.getCursosMatriculados().add(cu15);
+            cu15.getMatriculados().add(e18);
+            e18.getCursosMatriculados().add(cu15);
+            
+            cu15.getSolicitantes().add(e19);
+            e19.getCursosSolicitados().add(cu15);
+            cu15.getSolicitantes().add(e20);
+            e20.getCursosSolicitados().add(cu15);
+            cu15.getSolicitantes().add(e21);
+            e21.getCursosSolicitados().add(cu15);
+            cu15.getSolicitantes().add(e22);
+            e22.getCursosSolicitados().add(cu15);
+            cu15.getSolicitantes().add(e23);
+            e23.getCursosSolicitados().add(cu15);
+            cu15.getSolicitantes().add(e24);
+            e24.getCursosSolicitados().add(cu15);
+
+            cu16.getMatriculados().add(e19);
+            e19.getCursosMatriculados().add(cu16);
+            cu16.getMatriculados().add(e20);
+            e20.getCursosMatriculados().add(cu16);
+            cu16.getMatriculados().add(e21);
+            e21.getCursosMatriculados().add(cu16);
+            cu16.getMatriculados().add(e22);
+            e22.getCursosMatriculados().add(cu16);
+            cu16.getMatriculados().add(e23);
+            e23.getCursosMatriculados().add(cu16);
+            cu16.getMatriculados().add(e24);
+            e24.getCursosMatriculados().add(cu16);
+            
+            cu16.getSolicitantes().add(e13);
+            e13.getCursosSolicitados().add(cu16);
+            cu16.getSolicitantes().add(e14);
+            e14.getCursosSolicitados().add(cu16);
+            cu16.getSolicitantes().add(e15);
+            e15.getCursosSolicitados().add(cu16);
+            cu16.getSolicitantes().add(e16);
+            e16.getCursosSolicitados().add(cu16);
+            cu16.getSolicitantes().add(e17);
+            e17.getCursosSolicitados().add(cu16);
+            cu16.getSolicitantes().add(e18);
+            e18.getCursosSolicitados().add(cu16);
+
+            cu17.getMatriculados().add(e25);
+            e25.getCursosMatriculados().add(cu17);
+            cu17.getMatriculados().add(e26);
+            e26.getCursosMatriculados().add(cu17);
+            cu17.getMatriculados().add(e27);
+            e27.getCursosMatriculados().add(cu17);
+            cu17.getMatriculados().add(e28);
+            e28.getCursosMatriculados().add(cu17);
+            cu17.getMatriculados().add(e29);
+            e29.getCursosMatriculados().add(cu17);
+            cu17.getMatriculados().add(e30);
+            e30.getCursosMatriculados().add(cu17);
+            
+            cu17.getSolicitantes().add(e31);
+            e31.getCursosSolicitados().add(cu17);
+            cu17.getSolicitantes().add(e32);
+            e32.getCursosSolicitados().add(cu17);
+            cu17.getSolicitantes().add(e33);
+            e33.getCursosSolicitados().add(cu17);
+            cu17.getSolicitantes().add(e34);
+            e34.getCursosSolicitados().add(cu17);
+            cu17.getSolicitantes().add(e35);
+            e35.getCursosSolicitados().add(cu17);
+            cu17.getSolicitantes().add(e36);
+            e36.getCursosSolicitados().add(cu17);
+
+            cu18.getMatriculados().add(e31);
+            e31.getCursosMatriculados().add(cu18);
+            cu18.getMatriculados().add(e32);
+            e32.getCursosMatriculados().add(cu18);
+            cu18.getMatriculados().add(e33);
+            e33.getCursosMatriculados().add(cu18);
+            cu18.getMatriculados().add(e34);
+            e34.getCursosMatriculados().add(cu18);
+            cu18.getMatriculados().add(e35);
+            e35.getCursosMatriculados().add(cu18);
+            cu18.getMatriculados().add(e36);
+            e36.getCursosMatriculados().add(cu18);
+            
+            cu18.getSolicitantes().add(e25);
+            e25.getCursosSolicitados().add(cu18);
+            cu18.getSolicitantes().add(e26);
+            e26.getCursosSolicitados().add(cu18);
+            cu18.getSolicitantes().add(e27);
+            e27.getCursosSolicitados().add(cu18);
+            cu18.getSolicitantes().add(e28);
+            e28.getCursosSolicitados().add(cu18);
+            cu18.getSolicitantes().add(e29);
+            e29.getCursosSolicitados().add(cu18);
+            cu18.getSolicitantes().add(e30);
+            e30.getCursosSolicitados().add(cu18);
             
             cubl.save(cu);
             cubl.save(cu2);
@@ -680,6 +1184,7 @@ public class FakeDataServlet extends HttpServlet {
             cubl.save(cu16);
             cubl.save(cu17);
             cubl.save(cu18);
+            
             cbl.save(c);
             cbl.save(c2);
             cbl.save(c3);
@@ -689,6 +1194,7 @@ public class FakeDataServlet extends HttpServlet {
             cbl.save(c7);
             cbl.save(c8);
             cbl.save(c9);
+            
             ebl.save(e);
             ebl.save(e2);
             ebl.save(e3);
