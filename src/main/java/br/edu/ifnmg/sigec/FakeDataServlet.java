@@ -678,7 +678,7 @@ public class FakeDataServlet extends HttpServlet {
             e34.setSenha("dfdff45df45");
             e34.setTipo(1);
             e34.setTurma(2019);
-
+            
             Estudante e35 = new Estudante();
             e35.setCpf("33025066032");
             e35.setEmail("wasd@email.com");
@@ -1229,6 +1229,8 @@ public class FakeDataServlet extends HttpServlet {
             ebl.save(e32);
             ebl.save(e33);
             ebl.save(e34);
+            ebl.save(e35);
+            ebl.save(e36);
             
             out.println("</body>");
             out.println("</html>");
