@@ -37,3 +37,7 @@ a {
     text-decoration: none;
     color: var(--black);
 }
+
+.logo {
+    margin: 100px auto 20px;
+}

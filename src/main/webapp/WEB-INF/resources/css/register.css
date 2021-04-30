@@ -35,23 +35,3 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
     padding: 10px;
 }
 
-.register-field {
-    display: flex;
-    flex-direction: row;
-
-    width: 100%;
-
-    margin-bottom: 10px;
-
-    border: 1px solid blue;
-}
-
-.register-field > label {
-    width: 30%;
-
-    text-align: left;
-}
-
-.register-field > input {
-    width: 70%;
-}
