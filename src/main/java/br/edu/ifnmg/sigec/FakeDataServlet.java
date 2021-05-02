@@ -70,70 +70,60 @@ public class FakeDataServlet extends HttpServlet {
             c.setNome("Marcos Quântico");
             c.setEmail("marcos@ifnmg.edu.br");
             c.setSenha("senhasenha");
-            c.setTipo(0);
             
             Coordenador c1 = new Coordenador();
             c1.setCodigo("124421");
             c1.setNome("Alan Turingue");
             c1.setEmail("alan@ifnmg.edu.br");
             c1.setSenha("enigmaiscrap");
-            c1.setTipo(0);
             
             Coordenador c2 = new Coordenador();
             c2.setCodigo("554488");
             c2.setNome("Pedro Pedreira");
             c2.setEmail("pedro@ifnmg.edu.br");
             c2.setSenha("password");
-            c2.setTipo(0);
             
             Coordenador c3 = new Coordenador();
             c3.setCodigo("102030");
             c3.setNome("Daniel Danilo");
             c3.setEmail("daniel@ifnmg.edu.br");
             c3.setSenha("senhadodd");
-            c3.setTipo(0);
             
             Coordenador c4 = new Coordenador();
             c4.setCodigo("332211");
             c4.setNome("Fernando Fernández");
             c4.setEmail("fernando@ifnmg.edu.br");
             c4.setSenha("s3nh4f0rt3");
-            c4.setTipo(0);
             
             Coordenador c5 = new Coordenador();
             c5.setCodigo("121323");
             c5.setNome("Márcia Macedo");
             c5.setEmail("marciamacedo@ifnmg.edu.br");
             c5.setSenha("eitasenhaforte");
-            c5.setTipo(0);
             
             Coordenador c6 = new Coordenador();
             c6.setCodigo("303202");
             c6.setNome("Sabrina Santana");
             c6.setEmail("sasa@ifnmg.edu.br");
             c6.setSenha("vaisasa");
-            c6.setTipo(0);
             
             Coordenador c7 = new Coordenador();
             c7.setCodigo("774411");
             c7.setNome("Vitor Viana");
             c7.setEmail("viana@ifnmg.edu.br");
             c7.setSenha("senhadovitor");
-            c7.setTipo(0);
             
             Coordenador c8 = new Coordenador();
             c8.setCodigo("885522");
             c8.setNome("Elias Cavalcante");
             c8.setEmail("elias@ifnmg.edu.br");
             c8.setSenha("insirasenhaaqui");
-            c8.setTipo(0);
             
             Coordenador c9 = new Coordenador();
             c9.setCodigo("996633");
             c9.setNome("Caio Carvalho");
             c9.setEmail("caca@ifnmg.edu.br");
             c9.setSenha("cacaroto");
-            c9.setTipo(0);
 
             Curso cu = new Curso();
             cu.setCargaHoraria(20);
@@ -375,7 +365,6 @@ public class FakeDataServlet extends HttpServlet {
             e.setMatricula("552114");
             e.setNome("Abílio Almeida");
             e.setSenha("abilio123");
-            e.setTipo(1);
             e.setTurma(2015);
             e.getCursosMatriculados().add(cu);
             cu.getMatriculados().add(e);
@@ -386,7 +375,6 @@ public class FakeDataServlet extends HttpServlet {
             e2.setMatricula("225544");
             e2.setNome("Bruno Barbosa");
             e2.setSenha("senhadificil");
-            e2.setTipo(1);
             e2.setTurma(2015);
             e2.getCursosSolicitados().add(cu);
             cu.getSolicitantes().add(e2);
@@ -397,7 +385,6 @@ public class FakeDataServlet extends HttpServlet {
             e3.setMatricula("225545");
             e3.setNome("Caio Castro");
             e3.setSenha("senhadocaio");
-            e3.setTipo(1);
             e3.setTurma(2015);
             
             Estudante e4 = new Estudante();
@@ -406,7 +393,6 @@ public class FakeDataServlet extends HttpServlet {
             e4.setMatricula("225544");
             e4.setNome("Danilo Dantas");
             e4.setSenha("wassaw");
-            e4.setTipo(1);
             e4.setTurma(2015);
             
             Estudante e5 = new Estudante();
@@ -415,7 +401,6 @@ public class FakeDataServlet extends HttpServlet {
             e5.setMatricula("225547");
             e5.setNome("Esdras Elias");
             e5.setSenha("gaivotamarinha");
-            e5.setTipo(1);
             e5.setTurma(2016);
             
             Estudante e6 = new Estudante();
@@ -424,7 +409,6 @@ public class FakeDataServlet extends HttpServlet {
             e6.setMatricula("225556");
             e6.setNome("Fábio França");
             e6.setSenha("minhasenha");
-            e6.setTipo(1);
             e6.setTurma(2016);
             
             Estudante e7 = new Estudante();
@@ -433,7 +417,6 @@ public class FakeDataServlet extends HttpServlet {
             e7.setMatricula("225600");
             e7.setNome("Gabriel Gafanhoto");
             e7.setSenha("00fdfdflfn");
-            e7.setTipo(1);
             e7.setTurma(2016);
             
             Estudante e8 = new Estudante();
@@ -442,7 +425,6 @@ public class FakeDataServlet extends HttpServlet {
             e8.setMatricula("225554");
             e8.setNome("Hélio Hilário");
             e8.setSenha("sd09ds0ds");
-            e8.setTipo(1);
             e8.setTurma(2016);
             
             Estudante e9 = new Estudante();
@@ -451,7 +433,6 @@ public class FakeDataServlet extends HttpServlet {
             e9.setMatricula("225532");
             e9.setNome("Igor Igor");
             e9.setSenha("df64df16d4f16");
-            e9.setTipo(1);
             e9.setTurma(2016);
             
             Estudante e10 = new Estudante();
@@ -460,7 +441,6 @@ public class FakeDataServlet extends HttpServlet {
             e10.setMatricula("225549");
             e10.setNome("Katarina Kruger");
             e10.setSenha("d0f9dvf0d9v");
-            e10.setTipo(1);
             e10.setTurma(2016);
             
             Estudante e11 = new Estudante();
@@ -469,7 +449,6 @@ public class FakeDataServlet extends HttpServlet {
             e11.setMatricula("225540");
             e11.setNome("Letícia Lima");
             e11.setSenha("vdfm0dvf90vfd");
-            e11.setTipo(1);
             e11.setTurma(2016);
             
             Estudante e12 = new Estudante();
@@ -478,7 +457,6 @@ public class FakeDataServlet extends HttpServlet {
             e12.setMatricula("225550");
             e12.setNome("Maria Macedo");
             e12.setSenha("d2j3d9nd");
-            e12.setTipo(1);
             e12.setTurma(2016);
             
             Estudante e13 = new Estudante();
@@ -487,7 +465,6 @@ public class FakeDataServlet extends HttpServlet {
             e13.setMatricula("225542");
             e13.setNome("Nayara Nogueira");
             e13.setSenha("179df91df19");
-            e13.setTipo(1);
             e13.setTurma(2016);
             
             Estudante e14 = new Estudante();
@@ -496,7 +473,6 @@ public class FakeDataServlet extends HttpServlet {
             e14.setMatricula("225530");
             e14.setNome("Otávio Ollosa");
             e14.setSenha("c8mdf89df9n8df");
-            e14.setTipo(1);
             e14.setTurma(2017);
             
             Estudante e15 = new Estudante();
@@ -505,7 +481,6 @@ public class FakeDataServlet extends HttpServlet {
             e15.setMatricula("225520");
             e15.setNome("Felipe Feijão");
             e15.setSenha("fdf09df09dfn0df");
-            e15.setTipo(1);
             e15.setTurma(2017);
             
             Estudante e16 = new Estudante();
@@ -514,7 +489,6 @@ public class FakeDataServlet extends HttpServlet {
             e16.setMatricula("225524");
             e16.setNome("João Januário");
             e16.setSenha("ldldldldldlld");
-            e16.setTipo(1);
             e16.setTurma(2017);
             
             Estudante e17 = new Estudante();
@@ -523,7 +497,6 @@ public class FakeDataServlet extends HttpServlet {
             e17.setMatricula("225523");
             e17.setNome("Jacinto Ventania");
             e17.setSenha("sd98sdn89sd89");
-            e17.setTipo(1);
             e17.setTurma(2017);
             
             Estudante e18 = new Estudante();
@@ -532,7 +505,6 @@ public class FakeDataServlet extends HttpServlet {
             e18.setMatricula("225748");
             e18.setNome("Marta Wayne");
             e18.setSenha("sd09nds0");
-            e18.setTipo(1);
             e18.setTurma(2017);
             
             Estudante e19 = new Estudante();
@@ -541,7 +513,6 @@ public class FakeDataServlet extends HttpServlet {
             e19.setMatricula("225593");
             e19.setNome("Lucas Lúcido");
             e19.setSenha("615fd156dfdf156");
-            e19.setTipo(1);
             e19.setTurma(2017);
             
             Estudante e20 = new Estudante();
@@ -550,7 +521,6 @@ public class FakeDataServlet extends HttpServlet {
             e20.setMatricula("225514");
             e20.setNome("Luísa Lima");
             e20.setSenha("0dff090dfn9f0");
-            e20.setTipo(1);
             e20.setTurma(2017);
             
             Estudante e21 = new Estudante();
@@ -559,7 +529,6 @@ public class FakeDataServlet extends HttpServlet {
             e21.setMatricula("225510");
             e21.setNome("Laís Lima");
             e21.setSenha("g146gffg");
-            e21.setTipo(1);
             e21.setTurma(2017);
             
             Estudante e22 = new Estudante();
@@ -568,16 +537,12 @@ public class FakeDataServlet extends HttpServlet {
             e22.setMatricula("225344");
             e22.setNome("Bárbara Barbosa");
             e22.setSenha("44fd45dfdf");
-            e22.setTipo(1);
             e22.setTurma(2017);
             
             Estudante e23 = new Estudante();
             e23.setCpf("40563525297");
             e23.setEmail("tycfcy@email.com");
             e23.setMatricula("225574");
-            e23.setNome("Bianca Barbosa");
-            e23.setSenha("6vbc465df4df56df456");
-            e23.setTipo(1);
             e23.setTurma(2018);
             
             Estudante e24 = new Estudante();
@@ -586,7 +551,6 @@ public class FakeDataServlet extends HttpServlet {
             e24.setMatricula("225544");
             e24.setNome("Bruna Barbosa");
             e24.setSenha("7fg78fg78fg");
-            e24.setTipo(1);
             e24.setTurma(2018);
             
             Estudante e25 = new Estudante();
@@ -595,7 +559,6 @@ public class FakeDataServlet extends HttpServlet {
             e25.setMatricula("225544");
             e25.setNome("Baltazar Barbosa");
             e25.setSenha("df7df78df78");
-            e25.setTipo(1);
             e25.setTurma(2018);
             
             Estudante e26 = new Estudante();
@@ -604,7 +567,6 @@ public class FakeDataServlet extends HttpServlet {
             e26.setMatricula("225456");
             e26.setNome("Bilbo Barbosa");
             e26.setSenha("fg8f8f8f8");
-            e26.setTipo(1);
             e26.setTurma(2018);
             
             Estudante e27 = new Estudante();
@@ -613,7 +575,6 @@ public class FakeDataServlet extends HttpServlet {
             e27.setMatricula("252525");
             e27.setNome("Billy Barbosa");
             e27.setSenha("2kl12kl12kl12");
-            e27.setTipo(1);
             e27.setTurma(2018);
             
             Estudante e28 = new Estudante();
@@ -622,7 +583,6 @@ public class FakeDataServlet extends HttpServlet {
             e28.setMatricula("525696");
             e28.setNome("Andy Andrade");
             e28.setSenha("rc82r9f28c");
-            e28.setTipo(1);
             e28.setTurma(2018);
             
             Estudante e29 = new Estudante();
@@ -631,7 +591,6 @@ public class FakeDataServlet extends HttpServlet {
             e29.setMatricula("225500");
             e29.setNome("Walter Valério");
             e29.setSenha("23d1635d6231d");
-            e29.setTipo(1);
             e29.setTurma(2019);
             
             Estudante e30 = new Estudante();
@@ -640,7 +599,6 @@ public class FakeDataServlet extends HttpServlet {
             e30.setMatricula("225654");
             e30.setNome("Lucília Lima");
             e30.setSenha("limakakakakaka");
-            e30.setTipo(1);
             e30.setTurma(2019);
             
             Estudante e31 = new Estudante();
@@ -649,7 +607,6 @@ public class FakeDataServlet extends HttpServlet {
             e31.setMatricula("225525");
             e31.setNome("Alberto Gilberto");
             e31.setSenha("45sd45sd45sd45sd5");
-            e31.setTipo(1);
             e31.setTurma(2019);
             
             Estudante e32 = new Estudante();
@@ -658,7 +615,6 @@ public class FakeDataServlet extends HttpServlet {
             e32.setMatricula("225582");
             e32.setNome("Hugo Manoel");
             e32.setSenha("d3154d3154d");
-            e32.setTipo(1);
             e32.setTurma(2019);
             
             Estudante e33 = new Estudante();
@@ -667,7 +623,6 @@ public class FakeDataServlet extends HttpServlet {
             e33.setMatricula("225411");
             e33.setNome("Eurico Eustáquio");
             e33.setSenha("df45df45df45df45");
-            e33.setTipo(1);
             e33.setTurma(2019);
             
             Estudante e34 = new Estudante();
@@ -676,7 +631,6 @@ public class FakeDataServlet extends HttpServlet {
             e34.setMatricula("225747");
             e34.setNome("Júlia Barbosa");
             e34.setSenha("dfdff45df45");
-            e34.setTipo(1);
             e34.setTurma(2019);
             
             Estudante e35 = new Estudante();
@@ -685,7 +639,6 @@ public class FakeDataServlet extends HttpServlet {
             e35.setMatricula("225412");
             e35.setNome("Irineu Eustáquio");
             e35.setSenha("vocenaosabenemeu");
-            e35.setTipo(1);
             e35.setTurma(2019);
             
             Estudante e36 = new Estudante();
@@ -694,9 +647,7 @@ public class FakeDataServlet extends HttpServlet {
             e36.setMatricula("225714");
             e36.setNome("Maria Florência");
             e36.setSenha("joseclaudio");
-            e36.setTipo(1);
             e36.setTurma(2019);
-            
             
             cu.getMatriculados().add(e);
             e.getCursosMatriculados().add(cu);
