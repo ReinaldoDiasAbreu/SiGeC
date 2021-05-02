@@ -61,23 +61,3 @@ a {
 #footer > img {
     height: 20px;
 }
-
-#my-courses {
-    width: 300px;
-    height: 600px;
-    margin: 20px;
-    
-    background-color: var(--black);
-    
-    float: left;
-}
-
-#available-courses {
-    margin: 20px auto;
-    
-    background-color: var(--black);
-    
-    width: 800px;
-    
-    float: right;
-}
