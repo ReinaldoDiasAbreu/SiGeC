@@ -17,11 +17,15 @@
 package br.edu.ifnmg.coordenador;
 
 import br.edu.ifnmg.curso.Curso;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 
 /**
  *
@@ -32,8 +36,20 @@ public class CoordenadorBean implements CoordenadorBeanLocal {
     @PersistenceContext
     EntityManager em;
     
+    @Inject
+    Pbkdf2PasswordHash passwordHasher;
+    
     @Override
     public void save(Coordenador c){
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("Pbkdf2PasswordHash.Iterations", "3071");
+        parameters.put("Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512");
+        parameters.put("Pbkdf2PasswordHash.SaltSizeBytes", "64");
+        passwordHasher.initialize(parameters);
+        
+        String hashedPassword = passwordHasher.generate(c.getSenha().toCharArray());
+        c.setSenha(hashedPassword);
+        
         em.persist(c);
     }
     

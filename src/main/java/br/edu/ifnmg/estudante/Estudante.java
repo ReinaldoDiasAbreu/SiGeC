@@ -96,6 +96,9 @@ public class Estudante extends Pessoa implements Serializable {
     private List<Curso> cursosSolicitados;
 
     public Estudante() {
+        this.setGrupo("aluno");
+        this.setNome("NOME NAO INSERIDO");
+        this.setSenha("SENHA VAZIA");
         cursosMatriculados = new ArrayList<>();
         cursosSolicitados = new ArrayList<>();
     }

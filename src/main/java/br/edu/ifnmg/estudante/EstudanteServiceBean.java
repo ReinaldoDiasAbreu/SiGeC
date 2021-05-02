@@ -51,7 +51,6 @@ public class EstudanteServiceBean implements Serializable  {
     }
     
     public void save(){
-        estudante.setTipo(1);
         if(senha1.equals(senha2)){
             estudante.setSenha(senha1);
         }
