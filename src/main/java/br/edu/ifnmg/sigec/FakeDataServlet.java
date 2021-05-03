@@ -364,7 +364,7 @@ public class FakeDataServlet extends HttpServlet {
             e.setEmail("estudante@email.com");
             e.setMatricula("552114");
             e.setNome("Abílio Almeida");
-            e.setSenha("abilio123");
+            e.setSenha("123456");
             e.setTurma(2015);
             e.getCursosMatriculados().add(cu);
             cu.getMatriculados().add(e);
@@ -543,6 +543,8 @@ public class FakeDataServlet extends HttpServlet {
             e23.setCpf("40563525297");
             e23.setEmail("tycfcy@email.com");
             e23.setMatricula("225574");
+            e23.setNome("Bianca Barbosa");
+            e23.setSenha("43f53f45");
             e23.setTurma(2018);
             
             Estudante e24 = new Estudante();
