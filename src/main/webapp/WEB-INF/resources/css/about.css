@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4 de mai de 2021, 08:59:01
+    Author     : alex
+*/
+
+@import "root.css";
+
+#about {
+    width: 700px;
+    margin: 20px auto;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#about > img {
+    height: 100px;
+}
+
+
+
+#info {
+    border: 1px solid black;
+}
+
+#info > p {
+    padding: 20px;
+}
+
+#dev-list {
+    width: 90%;
+    
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.dev {
+    width: 150px;
+}
+
+.dev > img {
+    width: 100%;
+    
+    border-radius: 100px;
+}
