@@ -23,7 +23,7 @@ import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
         dataSourceLookup = "java:/SistemaDS",
         callerQuery = "select senha from tbl_pessoa "
         + "where email = ?",
-        groupsQuery = "select grupo from tbl_pessoa"
+        groupsQuery = "select grupo from tbl_pessoa "
         + "where email = ?",
         hashAlgorithm = Pbkdf2PasswordHash.class,
         hashAlgorithmParameters = {

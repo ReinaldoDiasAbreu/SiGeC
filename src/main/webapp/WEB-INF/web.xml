@@ -35,8 +35,9 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>about.xhtml</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    <!--
     <security-constraint>
         <display-name>Coordenador</display-name>
         <web-resource-collection>
@@ -47,6 +48,17 @@
             <role-name>coordenador</role-name>
         </auth-constraint>
     </security-constraint>
+    -->
+    
+    <security-role>
+        <description>Coordenador de cursos</description>
+        <role-name>coordenador</role-name>
+    </security-role>
+    
+    <security-role>
+        <description>Aluno do Instituto</description>
+        <role-name>aluno</role-name>
+    </security-role>
     
     <security-constraint>
         <display-name>Coordenador</display-name>
@@ -58,16 +70,6 @@
             <role-name>coordenador</role-name>
         </auth-constraint>
     </security-constraint>
-    
-    <security-role>
-        <description>Coordenador de cursos</description>
-        <role-name>coordenador</role-name>
-    </security-role>
-    
-    <security-role>
-        <description>Aluno do Instituto</description>
-        <role-name>aluno</role-name>
-    </security-role>
     
     <security-constraint>
         <display-name>Aluno</display-name>

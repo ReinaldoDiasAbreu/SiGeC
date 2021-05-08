@@ -16,10 +16,12 @@
  */
 package br.edu.ifnmg.curso;
 
+import java.util.List;
+
 /**
  *
  * @author Reinaldo Junio Dias de Abreu <rjdda at aluno.ifnmg.edu.br>
  */
 public class CursoServiceBean {
-    
+
 }

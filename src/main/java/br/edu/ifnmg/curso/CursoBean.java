@@ -101,4 +101,12 @@ public class CursoBean implements CursoBeanLocal{
         return em.createNamedQuery("Curso.findComVagas",
                 Curso.class).getResultList();
     }
+
+    @Override
+    public List<Curso> findAllOtherCoursesByEstudante(Long id) {
+         Query q = em.createNamedQuery("Curso.findAllOtherCoursesByEstudante",
+                    Curso.class);
+        //q.setParameter("id", id);
+        return q.getResultList();
+    }
 }
