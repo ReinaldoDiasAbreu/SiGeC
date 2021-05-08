@@ -80,9 +80,17 @@ public class Pessoa implements Serializable{
     private String senha;
     
     @Column(nullable = false)
-    private Integer tipo;
-
+    private String grupo;
+    
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
     public Long getId() {
         return id;
     }
@@ -114,20 +122,12 @@ public class Pessoa implements Serializable{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-    public Integer getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Integer tipo) {
-        this.tipo = tipo;
-    }
     
     //</editor-fold>
 
     @Override
     public String toString() {
-        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", tipo=" + tipo + '}';
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", grupo=" + grupo + '}';
     }
     
     

@@ -7,21 +7,25 @@
                 <div class="p-field p-grid">
                     <label for="email">E-mail</label>
                     <div class="p-col">
-                        <p:inputText id="email" type="text" />
+                        <p:inputText id="email" type="text" value="#{loginController.email}" />
                     </div>
                 </div>
                 <div class="p-field p-grid">
                     <label for="password">Senha</label>
                     <div class="p-col">
-                        <p:password id="password" />
+                        <p:password id="password" value="#{loginController.senha}" />
                     </div>
                     <div class="actions">
                         <p:commandLink value = "Recuperar senha" action = "login.xhtml" /> 
                     </div>
                 </div>
-                
 
-                <p:commandButton id="login-button"  styleClass="ui-button-success" value="Entrar" action="login.xhtml" />
+                <p:commandButton id="login-button"  
+                                 styleClass="ui-button-success" 
+                                 value="Entrar" 
+                                 action="#{loginController.login}" 
+                                 ajax="false"
+                                 update="@form"/>
             </h:form>
     </div>
 </ui:composition>

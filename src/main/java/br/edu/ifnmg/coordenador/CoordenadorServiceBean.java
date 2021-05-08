@@ -49,9 +49,7 @@ public class CoordenadorServiceBean implements Serializable {
         this.coordenador = coordenador;
     }
     
-    public void save(){
-        coordenador.setTipo(0);
-        
+    public void save(){        
         if(senha1.equals(senha2)){
             coordenador.setSenha(senha1);
         }
