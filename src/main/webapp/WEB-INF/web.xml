@@ -82,6 +82,18 @@
         </auth-constraint>
     </security-constraint>
     
+    <security-constraint>
+        <display-name>Painel Principal</display-name>
+        <web-resource-collection>
+            <web-resource-name>Área Principal</web-resource-name>
+            <url-pattern>/main.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>aluno</role-name>
+            <role-name>coordenador</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/errors/not-found.xhtml</location>

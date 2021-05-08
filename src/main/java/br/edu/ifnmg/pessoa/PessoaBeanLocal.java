@@ -17,6 +17,7 @@
 package br.edu.ifnmg.pessoa;
 
 import java.util.List;
+import java.util.Optional;
 import javax.ejb.Local;
 
 /**
@@ -28,5 +29,6 @@ public interface PessoaBeanLocal {
     public List<Pessoa> findAllPessoas();
     public Pessoa findPessoaById(Long id);
     public List<Pessoa> findPessoaByNome(String nome);
-    public Pessoa findPessoaByEmail(String email);
+    public Optional < Pessoa >  findPessoaByEmail(String email);
+    public Optional < String >  findTipoPessoa(String email);
 }

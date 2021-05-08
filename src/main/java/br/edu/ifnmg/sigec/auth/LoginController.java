@@ -68,7 +68,7 @@ public class LoginController {
                 facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Credenciais incorretas", null));
                 break;
             case SUCCESS:
-                getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/aluno/painel.xhtml");
+                getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/main.xhtml");
                 break;
         }
     }
