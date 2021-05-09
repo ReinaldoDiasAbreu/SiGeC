@@ -30,5 +30,5 @@ public interface PessoaBeanLocal {
     public Pessoa findPessoaById(Long id);
     public List<Pessoa> findPessoaByNome(String nome);
     public Optional < Pessoa >  findPessoaByEmail(String email);
-    public Optional < String >  findTipoPessoa(String email);
+    public Optional < String >  findGrupoPessoa(String email);
 }

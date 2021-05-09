@@ -51,15 +51,17 @@ public class UserController {
     @PostConstruct
     public void initialize() {
         String username = securityContext.getCallerPrincipal().getName();
-        System.out.println("\n\n\n\nUsuário Logado: " + username);
+        System.out.println("Usuário Logado: " + username);
+        
         this.currentUser = pessoaBean.findPessoaByEmail(username);
+        System.out.println("Usuário Logado: " + currentUser);
+        
+        /*
         this.currentUser.ifPresent(user -> {
             this.tipo = pessoaBean.findTipoPessoa(user.getEmail());
-        });
+        });*/
     }
-    /*
-18:57:58,308 ERROR [io.undertow.request] (default task-39) UT005023: Exception handling request to /sigec/main.xhtml: javax.servlet.ServletException: WELD-000049: Unable to invoke public void br.edu.ifnmg.sigec.auth.UserController.initialize() on br.edu.ifnmg.sigec.auth.UserController@4b7c5658
-    */
+
     public Pessoa getCurrentUser() {
         return currentUser.orElse(null);
     }
