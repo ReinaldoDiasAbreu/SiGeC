@@ -14,7 +14,11 @@
             <p:divider layout="vertical"/>
 
             <f:facet name="options">
-                <p:button value="Sair" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                Olá, #{userController.currentUser.nome}
+                <h:form>
+                    <p:commandButton value="Sair" action="#{userController.logout}" ajax="false"
+                                     icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                </h:form>
             </f:facet>
         </p:menubar>
     </h:form>

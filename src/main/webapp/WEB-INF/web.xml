@@ -37,19 +37,7 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
-    <!--
-    <security-constraint>
-        <display-name>Coordenador</display-name>
-        <web-resource-collection>
-            <web-resource-name>Protected page</web-resource-name>
-            <url-pattern>forbidden.xhtml</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>coordenador</role-name>
-        </auth-constraint>
-    </security-constraint>
-    -->
-    
+
     <security-role>
         <description>Coordenador de cursos</description>
         <role-name>coordenador</role-name>
