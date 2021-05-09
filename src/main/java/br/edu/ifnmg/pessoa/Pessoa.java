@@ -54,7 +54,11 @@ import javax.validation.constraints.NotEmpty;
     ),
     @NamedQuery(
             name = "Pessoa.findByEmail",
-            query = "SELECT p FROM pessoa p WHERE p.email = :email"
+            query = "select p from pessoa p where p.email = :email"
+    ),
+    @NamedQuery(
+            name = "Pessoa.returnGrupo",
+            query = "SELECT p.grupo FROM pessoa p WHERE p.email = :email"
     )
 })
 

@@ -17,6 +17,7 @@
 package br.edu.ifnmg.pessoa;
 
 import java.util.List;
+import java.util.Optional;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -59,12 +60,17 @@ public class PessoaBean implements PessoaBeanLocal {
 
     @Override
     public Pessoa findPessoaByEmail(String email) {
-       Query q = em.createNamedQuery(
-            "Pessoa.findByEmail", Pessoa.class
-        );
-        q.setParameter("email", email);
-        return (Pessoa) q.getSingleResult();
+       return em.createNamedQuery("Pessoa.findByEmail", Pessoa.class)
+               .setParameter("email", email)
+               .getSingleResult();
     }
 
+    @Override
+    public String findGrupoPessoa(String email) {
+       return em.createNamedQuery(
+            "Pessoa.returnGrupo", String.class)
+            .setParameter("email", email)
+            .getSingleResult();
+    }
 
 }

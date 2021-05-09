@@ -52,6 +52,11 @@
   text-decoration: none;
 }
 
+#top span#logged-user {
+    color: black;
+    margin-right: 0.2rem;
+}
+
 #top a:link:hover, #top a:visited:hover  {
   color: black;
   font-weight : bold;

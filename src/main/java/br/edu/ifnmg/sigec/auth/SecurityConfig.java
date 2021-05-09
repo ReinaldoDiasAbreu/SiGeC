@@ -33,7 +33,7 @@ import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 )
 @CustomFormAuthenticationMechanismDefinition(
         loginToContinue = @LoginToContinue(
-                loginPage = "/login.xhtml",
+                loginPage = "/index.xhtml",
                 errorPage = "",
                 useForwardToLogin = false
         )
