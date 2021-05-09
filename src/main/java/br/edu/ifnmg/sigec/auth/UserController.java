@@ -18,10 +18,9 @@ package br.edu.ifnmg.sigec.auth;
 
 import br.edu.ifnmg.pessoa.Pessoa;
 import br.edu.ifnmg.pessoa.PessoaBeanLocal;
+import java.io.IOException;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.application.Application;
-import javax.faces.application.NavigationHandler;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -49,10 +48,10 @@ public class UserController {
     
     @PostConstruct
     public void initialize() {
-        String username = securityContext.getCallerPrincipal().getName();
-        
-        this.currentUser = pessoaBean.findPessoaByEmail(username);  
-
+        if(isAuthenticated()){
+            String username = securityContext.getCallerPrincipal().getName();
+            this.currentUser = pessoaBean.findPessoaByEmail(username);  
+        }
     }
 
     public Pessoa getCurrentUser() {
@@ -61,6 +60,19 @@ public class UserController {
 
     public boolean isAuthenticated() {
         return securityContext.getCallerPrincipal() != null;
+    }
+
+    public void redirect() throws IOException{
+        if(isAuthenticated()){
+            if(currentUser.getGrupo().equals("aluno")){
+                facesContext.getExternalContext().redirect(facesContext.getExternalContext().
+                        getRequestContextPath() + "/aluno/painel.xhtml");
+            }
+            else{
+                facesContext.getExternalContext().redirect(facesContext.getExternalContext().
+                        getRequestContextPath() + "/coordenador/painel.xhtml");
+            }
+        }        
     }
 
     public String logout() throws ServletException {
