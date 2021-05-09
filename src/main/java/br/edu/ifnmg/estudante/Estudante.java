@@ -96,6 +96,7 @@ public class Estudante extends Pessoa implements Serializable {
     private List<Curso> cursosSolicitados;
 
     public Estudante() {
+        this.setGrupo("aluno");
         cursosMatriculados = new ArrayList<>();
         cursosSolicitados = new ArrayList<>();
     }
@@ -170,6 +171,6 @@ public class Estudante extends Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "Estudante{" + "cpf=" + cpf + ", turma=" + turma + ", matricula=" + matricula + '}';
+        return "Estudante{" + "nome=" + getNome() + ", cpf=" + cpf + ", turma=" + turma + ", matricula=" + matricula + '}';
     }
 }

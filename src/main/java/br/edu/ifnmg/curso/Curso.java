@@ -68,7 +68,11 @@ import javax.persistence.Temporal;
         query = "SELECT c FROM curso c WHERE c.concluido = false"),
     @NamedQuery(
         name = "Curso.findComVagas",
-        query = "SELECT c FROM curso c WHERE c.vagas > 0")
+        query = "SELECT c FROM curso c WHERE c.vagas > 0"),
+    @NamedQuery(
+            name = "Curso.findAllOtherCoursesByEstudante",
+            query = "SELECT c FROM curso c"
+    )
 })
 
 public class Curso implements Serializable {

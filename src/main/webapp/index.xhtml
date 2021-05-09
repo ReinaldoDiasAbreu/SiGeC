@@ -5,14 +5,16 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>SiGec | Home</title>
-        <h:outputStylesheet library="css" name="style.css" />
+        <h:outputStylesheet library="css" name="homepage.css" />
     </h:head>
     <h:body>
+        <!-- Redireciona para o painel caso o usuário já esteja logado -->
+        #{userController.redirect()}
         <ui:insert>
-            <ui:include src="/WEB-INF/templates/home-options-header.xhtml"/>
+            <ui:include src="/WEB-INF/fragments/home-options-header.xhtml"/>
         </ui:insert>
         <ui:insert>
-            <ui:include src="/WEB-INF/templates/login-box.xhtml"/>
+            <ui:include src="/WEB-INF/fragments/login-box.xhtml"/>
         </ui:insert>
     </h:body>
 </html>

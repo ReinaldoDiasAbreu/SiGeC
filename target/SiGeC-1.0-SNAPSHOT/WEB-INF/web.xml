@@ -8,6 +8,10 @@
         <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
         <param-value>/WEB-INF/resources</param-value>
     </context-param>
+    <context-param>
+        <param-name>primefaces.FONT_AWESOME</param-name>
+        <param-value>true</param-value>
+    </context-param>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -31,14 +35,57 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.xhtml</welcome-file>
+        <welcome-file>about.xhtml</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>Coordenador</display-name>
+        <web-resource-collection>
+            <web-resource-name>Protected page</web-resource-name>
+            <url-pattern>forbidden.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>coordenador</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>
+        <display-name>Coordenador</display-name>
+        <web-resource-collection>
+            <web-resource-name>Área do Coordenador</web-resource-name>
+            <url-pattern>/coordenador/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>coordenador</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-role>
+        <description>Coordenador de cursos</description>
+        <role-name>coordenador</role-name>
+    </security-role>
+    
+    <security-role>
+        <description>Aluno do Instituto</description>
+        <role-name>aluno</role-name>
+    </security-role>
+    
+    <security-constraint>
+        <display-name>Aluno</display-name>
+        <web-resource-collection>
+            <web-resource-name>Área do Aluno</web-resource-name>
+            <url-pattern>/aluno/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>aluno</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
     <error-page>
-        <exception-type>java.lang.Exception</exception-type>
-        <location>/errors/exception.xhtml</location>
         <error-code>404</error-code>
-        <location>/errors/not-found.xhtml</location>
+        <location>/WEB-INF/errors/not-found.xhtml</location>
         <error-code>500</error-code>
-        <location>/errors/server-error.xhtml</location>
+        <location>/WEB-INF/errors/server-error.xhtml</location>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/errors/exception.xhtml</location>
     </error-page>
 </web-app>

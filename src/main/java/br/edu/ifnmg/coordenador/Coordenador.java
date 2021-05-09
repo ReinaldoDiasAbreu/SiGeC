@@ -63,6 +63,7 @@ public class Coordenador extends Pessoa implements Serializable {
     private List<Curso> cursosCriados;
 
     public Coordenador() {
+        this.setGrupo("coordenador");
         cursosCriados = new ArrayList<>();
     }
     

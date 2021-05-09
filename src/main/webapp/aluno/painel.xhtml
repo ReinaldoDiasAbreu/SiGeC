@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+
+        <ui:composition template="./../WEB-INF/templates/aluno-painel-template.xhtml">
+
+            <ui:define name="top">
+                <ui:insert>
+                    <ui:include src="/WEB-INF/fragments/aluno-header.xhtml" />
+                </ui:insert>
+            </ui:define>
+
+            <ui:define name="left">
+                <ui:insert>
+                    <ui:include src="/WEB-INF/fragments/left-panel.xhtml" />
+                </ui:insert>
+            </ui:define>
+
+            <ui:define name="content">
+                <ui:insert>
+                    <ui:include src="/WEB-INF/fragments/available-courses.xhtml" />
+                </ui:insert>
+            </ui:define>
+
+            <ui:define name="bottom">
+                <ui:insert>
+                    <ui:include src="/WEB-INF/fragments/footer.xhtml" />
+                </ui:insert>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
