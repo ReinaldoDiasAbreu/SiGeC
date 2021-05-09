@@ -18,7 +18,6 @@ package br.edu.ifnmg.sigec.auth;
 
 import br.edu.ifnmg.pessoa.Pessoa;
 import br.edu.ifnmg.pessoa.PessoaBeanLocal;
-import java.util.Optional;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
@@ -44,30 +43,17 @@ public class UserController {
     @Inject
     FacesContext facesContext; 
     
-    private Optional<Pessoa> currentUser;
-    
-    private Optional<String> tipo;
+    private Pessoa currentUser;
     
     @PostConstruct
     public void initialize() {
         String username = securityContext.getCallerPrincipal().getName();
-        System.out.println("Usuário Logado: " + username);
         
-        this.currentUser = pessoaBean.findPessoaByEmail(username);
-        System.out.println("Usuário Logado: " + currentUser);
-        
-        /*
-        this.currentUser.ifPresent(user -> {
-            this.tipo = pessoaBean.findTipoPessoa(user.getEmail());
-        });*/
+        this.currentUser = pessoaBean.findPessoaByEmail(username);        
     }
 
     public Pessoa getCurrentUser() {
-        return currentUser.orElse(null);
-    }
-
-    public String getCurrentGrupo() {
-        return tipo.orElse(null);
+        return (currentUser != null) ? currentUser : null;
     }
 
     public boolean isAuthenticated() {
@@ -76,7 +62,7 @@ public class UserController {
 
     public String logout() throws ServletException {
         facesContext.getExternalContext()
-                .invalidateSession();
-        return "/index?faces-redirect=true";
+                    .invalidateSession();
+        return "/index.xhtml?faces-redirect=true";
     }
 }

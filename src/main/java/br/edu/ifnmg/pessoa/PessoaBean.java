@@ -59,22 +59,18 @@ public class PessoaBean implements PessoaBeanLocal {
     }
 
     @Override
-    public Optional < Pessoa > findPessoaByEmail(String email) {
+    public Pessoa findPessoaByEmail(String email) {
        return em.createNamedQuery("Pessoa.findByEmail", Pessoa.class)
                .setParameter("email", email)
-               .getSingleResult()
-               .stream()
-               .findFirst();
+               .getSingleResult();
     }
 
     @Override
-    public Optional<String> findGrupoPessoa(String email) {
-       Query q = em.createNamedQuery(
-            "Pessoa.returnGrupo", String.class
-        );
-        q.setParameter("email", email);
-        return (Optional < String >) q.getSingleResult();
+    public String findGrupoPessoa(String email) {
+       return em.createNamedQuery(
+            "Pessoa.returnGrupo", String.class)
+            .setParameter("email", email)
+            .getSingleResult();
     }
-
 
 }

@@ -171,6 +171,6 @@ public class Estudante extends Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "Estudante{" + "cpf=" + cpf + ", turma=" + turma + ", matricula=" + matricula + '}';
+        return "Estudante{" + "nome=" + getNome() + ", cpf=" + cpf + ", turma=" + turma + ", matricula=" + matricula + '}';
     }
 }
