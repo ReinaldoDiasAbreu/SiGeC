@@ -5,6 +5,8 @@
  */
 package br.edu.ifnmg.sigec.auth;
 
+import br.edu.ifnmg.pessoa.Pessoa;
+import br.edu.ifnmg.pessoa.PessoaBeanLocal;
 import java.io.IOException;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -40,6 +42,9 @@ public class LoginController {
 
     @Inject
     SecurityContext securityContext;
+    
+    @Inject
+    PessoaBeanLocal pessoaBean;
 
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
     public String getEmail() {
@@ -68,7 +73,17 @@ public class LoginController {
                 facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Credenciais incorretas", null));
                 break;
             case SUCCESS:
-                getExternalContext().redirect(getExternalContext().getRequestContextPath() + "/main.xhtml");
+                String username = securityContext.getCallerPrincipal().getName();
+                Pessoa pessoa = pessoaBean.findPessoaByEmail(username);
+                if(pessoa.getGrupo().equals("aluno")){
+                    getExternalContext().redirect(getExternalContext().
+                            getRequestContextPath() + "/aluno/painel.xhtml");
+                }
+                else{
+                    getExternalContext().redirect(getExternalContext().
+                            getRequestContextPath() + "/coordenador/painel.xhtml");
+                }
+                
                 break;
         }
     }

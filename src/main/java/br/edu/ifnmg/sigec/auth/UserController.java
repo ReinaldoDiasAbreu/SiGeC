@@ -20,6 +20,8 @@ import br.edu.ifnmg.pessoa.Pessoa;
 import br.edu.ifnmg.pessoa.PessoaBeanLocal;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.Application;
+import javax.faces.application.NavigationHandler;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -49,7 +51,8 @@ public class UserController {
     public void initialize() {
         String username = securityContext.getCallerPrincipal().getName();
         
-        this.currentUser = pessoaBean.findPessoaByEmail(username);        
+        this.currentUser = pessoaBean.findPessoaByEmail(username);  
+
     }
 
     public Pessoa getCurrentUser() {
