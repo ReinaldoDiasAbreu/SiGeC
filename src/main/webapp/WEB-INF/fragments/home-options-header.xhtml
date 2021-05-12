@@ -6,7 +6,7 @@
         <p:growl id="messages"/>
 
         <p:menubar>
-            <p:menuitem value="Página Inicial" icon="pi pi-fw pi-home" outcome="/index.html"/>
+            <p:menuitem value="#{i18n.homepage}" icon="pi pi-fw pi-home" outcome="/index.html"/>
 
             <p:submenu label="Cadastro" icon="pi pi-fw pi-user-plus">
                 <p:menuitem value="Aluno" icon="pi pi-fw pi-book"/>
@@ -17,16 +17,17 @@
             
             <p:menuitem value="Sobre" icon="pi pi-fw pi-info-circle" outcome="/about.xhtml"/>
 
-            <p:submenu label="Linguagem" icon="pi pi-fw pi-globe">
-                <p:menuitem>
+            <p:submenu label="Idioma" icon="pi pi-fw pi-globe">
+                <p:menuitem action='#{userController.setLang("pt-BR")}'>
                     <h:graphicImage class="img-icon" library="img" name="brasil.png"/> Português
                 </p:menuitem>
-                <p:menuitem>
-                    <h:graphicImage class="img-icon" library="img" name="usa.png"/> English
+                <p:menuitem action='#{userController.setLang("en")}'>
+                    <h:graphicImage class="img-icon" library="img" name="usa.png" /> English
                 </p:menuitem>
-                <p:menuitem>
+                <p:menuitem action='#{userController.setLang("es")}'>
                     <h:graphicImage class="img-icon" library="img" name="espanha.png"/> Español
                 </p:menuitem>
+                
             </p:submenu>
         </p:menubar>
     </h:form>
