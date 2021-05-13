@@ -15,13 +15,12 @@
 
             <p:menuitem value="#{i18n.index_verificarcod}" icon="pi pi-fw pi-ticket"/>
             
-            <p:menuitem value="Sobre" icon="pi pi-fw pi-info-circle" outcome="/about.xhtml"/>
+            <p:menuitem value="#{i18n.index_sobre}" icon="pi pi-fw pi-info-circle" outcome="/about.xhtml"/>
             
-            <p:submenu label="Idioma" icon="pi pi-fw pi-globe">
+            <p:submenu label="#{i18n.index_idioma}" icon="pi pi-fw pi-globe">
                 <p:menuitem>
                     <h:commandLink action="#{userController.defineLang('pt-BR')}">
                         <h:graphicImage styleClass="img-icon" library="img" name="brasil.png"/>
-                        
                     </h:commandLink>
                 </p:menuitem>
                 <p:menuitem>
@@ -32,7 +31,6 @@
                 <p:menuitem>
                     <h:commandLink action="#{userController.defineLang('es')}">
                         <h:graphicImage styleClass="img-icon" library="img" name="espanha.png"/>
-                        
                     </h:commandLink>
                 </p:menuitem>
             </p:submenu>
