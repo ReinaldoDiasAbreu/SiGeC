@@ -60,6 +60,12 @@ public class UserController {
         this.lang = lang;
     }
     
+    public String defineLang(String lang){
+        this.setLang(lang);
+        System.out.println("Linguagem: " + lang);
+        return null;
+    }
+    
     @PostConstruct
     public void initialize() {
         if(isAuthenticated()){

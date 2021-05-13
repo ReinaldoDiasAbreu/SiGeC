@@ -8,27 +8,37 @@
         <p:menubar>
             <p:menuitem value="#{i18n.homepage}" icon="pi pi-fw pi-home" outcome="/index.html"/>
 
-            <p:submenu label="Cadastro" icon="pi pi-fw pi-user-plus">
-                <p:menuitem value="Aluno" icon="pi pi-fw pi-book"/>
-                <p:menuitem value="Coordenador" icon="pi pi-fw pi-cog"/>
+            <p:submenu label="#{i18n.index_cadastro}" icon="pi pi-fw pi-user-plus">
+                <p:menuitem value="#{i18n.index_aluno}" icon="pi pi-fw pi-book"/>
+                <p:menuitem value="#{i18n.index_coordenador}" icon="pi pi-fw pi-cog"/>
             </p:submenu>
 
-            <p:menuitem value="Verificar código" icon="pi pi-fw pi-ticket"/>
+            <p:menuitem value="#{i18n.index_verificarcod}" icon="pi pi-fw pi-ticket"/>
             
             <p:menuitem value="Sobre" icon="pi pi-fw pi-info-circle" outcome="/about.xhtml"/>
-
+            
             <p:submenu label="Idioma" icon="pi pi-fw pi-globe">
-                <p:menuitem action='#{userController.setLang("pt-BR")}'>
-                    <h:graphicImage class="img-icon" library="img" name="brasil.png"/> Português
+                <p:menuitem>
+                    <h:commandLink action="#{userController.defineLang('pt-BR')}">
+                        <h:graphicImage styleClass="img-icon" library="img" name="brasil.png"/>
+                        
+                    </h:commandLink>
                 </p:menuitem>
-                <p:menuitem action='#{userController.setLang("en")}'>
-                    <h:graphicImage class="img-icon" library="img" name="usa.png" /> English
+                <p:menuitem>
+                    <h:commandLink action="#{userController.defineLang('en')}">
+                        <h:graphicImage styleClass="img-icon" library="img" name="usa.png"/>
+                    </h:commandLink>
                 </p:menuitem>
-                <p:menuitem action='#{userController.setLang("es")}'>
-                    <h:graphicImage class="img-icon" library="img" name="espanha.png"/> Español
+                <p:menuitem>
+                    <h:commandLink action="#{userController.defineLang('es')}">
+                        <h:graphicImage styleClass="img-icon" library="img" name="espanha.png"/>
+                        
+                    </h:commandLink>
                 </p:menuitem>
-                
             </p:submenu>
+
         </p:menubar>
+            
+            
     </h:form>
 </ui:composition>
