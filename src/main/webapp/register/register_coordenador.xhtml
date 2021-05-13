@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>SiGeC | Cadastro de Coordenador</title>
+        <h:outputStylesheet library="css" name="register.css" />
+    </h:head>
+    <h:body>
+        <ui:insert>
+            <ui:include src="/WEB-INF/fragments/home-options-header.xhtml"/>
+        </ui:insert>
+        <div class="card centered">
+            <h3>Cadastro de Coordenador</h3>
+            <h:form> 
+                <h3>#{i18n.form_username}</h3>
+                <span class="ui-float-label">
+                   <p:inputText id="name-input" value="#{estudanteBean.estudante.nome}" style="width: 400px"/>
+                </span>
+                
+                <h3>#{i18n.form_email}</h3>
+                <span class="ui-float-label">
+                   <p:inputText id="email-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                </span>
+                
+                <h3>#{i18n.form_codigo}</h3>
+                <span class="ui-float-label">
+                   <p:inputText id="codigo-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                </span>
+                
+                <h3>#{i18n.form_senha1}</h3>
+                <span class="ui-float-label">
+                   <p:inputText id="senha1-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                </span>
+                
+                <h3>#{i18n.form_senha2}</h3>
+                <span class="ui-float-label">
+                   <p:inputText id="senha2-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                </span>
+
+                <p:commandButton value="#{i18n.cadastro_salvar}"  action="#{coordenadorBean.save()}"  styleClass="ui-button-info"/>
+            </h:form>
+
+        </div>
+    </h:body>
+</html>
+

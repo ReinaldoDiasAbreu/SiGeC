@@ -21,17 +21,12 @@ along with this program.  If not, see http://www.gnu.org/licenses/.
 
 @import 'root.css';
 
-.register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 700px;
-
+.centered {
     border: 1px solid black;
 
     margin: 200px auto;
-    padding: 10px;
+    
+    width: fit-content;
+    
+    padding: 30px;
 }
-
