@@ -6,24 +6,24 @@
          <h:graphicImage library="img" name="logo.png"/>
             <h:form>
                 <div class="p-field p-grid">
-                    <label for="email">E-mail</label>
+                    <label for="email">#{i18n.login_email}</label>
                     <div class="p-col">
                         <p:inputText id="email" type="text" value="#{loginController.email}" />
                     </div>
                 </div>
                 <div class="p-field p-grid">
-                    <label for="password">Senha</label>
+                    <label for="password">#{i18n.login_senha}</label>
                     <div class="p-col">
                         <p:password id="password" value="#{loginController.senha}" />
                     </div>
                     <div class="actions">
-                        <p:commandLink value = "Recuperar senha" action = "login.xhtml" /> 
+                        <p:commandLink value = "#{i18n.recuperar_senha}" action = "login.xhtml" /> 
                     </div>
                 </div>
 
                 <p:commandButton id="login-button"  
                                  styleClass="ui-button-success" 
-                                 value="Entrar" 
+                                 value="#{i18n.btn_entrar}" 
                                  action="#{loginController.login}" 
                                  ajax="false"
                                  update="@form"/>
