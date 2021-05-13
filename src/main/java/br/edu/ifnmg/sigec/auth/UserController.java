@@ -46,6 +46,26 @@ public class UserController {
     
     private Pessoa currentUser;
     
+    private String lang;
+
+    public UserController() {
+        lang = "pt-BR";
+    }
+    
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+    
+    public String defineLang(String lang){
+        this.setLang(lang);
+        System.out.println("Linguagem: " + lang);
+        return null;
+    }
+    
     @PostConstruct
     public void initialize() {
         if(isAuthenticated()){
@@ -80,4 +100,6 @@ public class UserController {
                     .invalidateSession();
         return "/index.xhtml?faces-redirect=true";
     }
+
+
 }
