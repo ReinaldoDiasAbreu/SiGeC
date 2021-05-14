@@ -55,14 +55,15 @@ import javax.persistence.Table;
             query = "SELECT e FROM estudante e WHERE e.cpf = :cpf"
     ),
     @NamedQuery(
-            name = "Estudante.findAllCursosMatriculados",
-            query = "SELECT c FROM estudante e "
-                    + "JOIN e.cursosMatriculados c"
+            name = "Estudante.findCursosMatriculados",
+            query = "SELECT c FROM curso c WHERE c.id in (SELECT cm.id FROM estudante e JOIN e.cursosMatriculados cm WHERE e.id = :id)"
     ),
     @NamedQuery(
-            name = "Estudante.findCursosSolicitados",
-            query = "SELECT c FROM estudante e "
-                    + "JOIN e.cursosSolicitados c"
+            name = "Estudante.AllOtherCourses",
+            query = "SELECT c FROM curso c WHERE c.concluido = false and c.id not in"
+                    + "(SELECT cm.id from estudante e JOIN e.cursosMatriculados cm WHERE e.id = :id)"
+                    + "and c.id not in "
+                    + "(SELECT cs.id from estudante e JOIN e.cursosSolicitados cs WHERE e.id = :id)"
     )
 })
 
@@ -79,7 +80,7 @@ public class Estudante extends Pessoa implements Serializable {
     @Column(nullable = false)
     private String matricula;
     
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "tbl_estudante_cursosmatriculados",
             joinColumns = 
@@ -87,14 +88,14 @@ public class Estudante extends Pessoa implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "curso_id", foreignKey = @ForeignKey(name = "fk_curso_id")))
     private List<Curso> cursosMatriculados;
     
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
             name = "tbl_estudante_cursossolicitados",
             joinColumns = 
                     @JoinColumn(name = "estudante_id", foreignKey = @ForeignKey(name = "fk_estudante_id")),
             inverseJoinColumns = @JoinColumn(name = "curso_id", foreignKey = @ForeignKey(name = "fk_curso_id")))
     private List<Curso> cursosSolicitados;
-
+    
     public Estudante() {
         this.setGrupo("aluno");
         cursosMatriculados = new ArrayList<>();
@@ -142,6 +143,15 @@ public class Estudante extends Pessoa implements Serializable {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
+    
+    public void addSolicitacaoCurso(Curso c){
+        cursosSolicitados.add(c);
+    }
+    
+    public void addMatriculaCurso(Curso c){
+        cursosMatriculados.add(c);
+    }
+    
     //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
@@ -166,11 +176,11 @@ public class Estudante extends Pessoa implements Serializable {
         return true;
     }
 
-    
     //</editor-fold>
 
     @Override
     public String toString() {
         return "Estudante{" + "nome=" + getNome() + ", cpf=" + cpf + ", turma=" + turma + ", matricula=" + matricula + '}';
     }
+    
 }

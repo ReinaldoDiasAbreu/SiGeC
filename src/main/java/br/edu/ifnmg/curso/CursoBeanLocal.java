@@ -36,5 +36,4 @@ public interface CursoBeanLocal {
     public List<Curso> findCursosConcluidos();
     public List<Curso> findCursosNaoConcluidos();
     public List<Curso> findCursosComVagas();
-    public List<Curso> findAllOtherCoursesByEstudante(Long id);
 }

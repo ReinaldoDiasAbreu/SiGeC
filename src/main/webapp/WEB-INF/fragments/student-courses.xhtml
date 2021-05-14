@@ -10,7 +10,7 @@
             <p:dataTable
                 id="cursosTable"
                 widgetVar="cursosTable"
-                value="#{estudanteBean.findAllOtherCourses(userController.userAluno.id)}"
+                value="#{estudanteBean.findCursosMatriculados(userController.userAluno.id)}"
                 var="curso"
                 filteredValue="#{estudanteBean.filteredCursos}"
                 reflow="true"
@@ -23,7 +23,7 @@
 
                 <f:facet name="header">
                     <div id="dtheader">
-                        <h2>CURSOS DISPONÍVEIS</h2>
+                        <h2>MEUS CURSOS</h2>
 
                         <span class="filter-container ui-input-icon-left">
                             <i class="pi pi-search" />
@@ -70,29 +70,7 @@
                     filterStyle="display: none;"
                     style="width: auto; text-align: center;">
                     <h:outputText value="#{curso.ministrante}" />
-                </p:column>
-                
-                <p:column
-                    headerText="Solicitar Matrícula"
-                    style="width: 5em; text-align: center;">
-                    <!--Edit Task 1-->
-                    <p:commandButton 
-                        icon="pi pi-send"
-                        process="@this"
-                        onstart="$('html, body').animate({ scrollTop: 0 }, 'slow')"
-                        action="#{userController.addSolicitarMatriculaCurso(curso)}"
-                        update="formCursos:cursosTable"
-                        styleClass="rounded-button ui-button-help">
-                        <p:confirm
-                            type="popup"
-                            header="Solicitar Matricula"
-                            message="Deseja solicitar matricula neste curso?"
-                            icon="pi pi-exclamation-triangle"
-                            />
-                    </p:commandButton>
-                    
-                </p:column>
-                
+                </p:column>                
                 
             </p:dataTable>
 
