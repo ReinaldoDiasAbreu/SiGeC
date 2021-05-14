@@ -43,7 +43,7 @@ public class CertificadoBean implements CertificadoBeanLocal{
 
     @Override
     public void update(Certificado c) {
-        em.refresh(c);
+        em.merge(c);
     }
 
     @Override

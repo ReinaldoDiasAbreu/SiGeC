@@ -43,7 +43,7 @@ public class CursoBean implements CursoBeanLocal{
     
     @Override
     public void update(Curso c){
-        em.refresh(c);
+        em.merge(c);
     }
     
     @Override
@@ -102,11 +102,4 @@ public class CursoBean implements CursoBeanLocal{
                 Curso.class).getResultList();
     }
 
-    @Override
-    public List<Curso> findAllOtherCoursesByEstudante(Long id) {
-         Query q = em.createNamedQuery("Curso.findAllOtherCoursesByEstudante",
-                    Curso.class);
-        //q.setParameter("id", id);
-        return q.getResultList();
-    }
 }
