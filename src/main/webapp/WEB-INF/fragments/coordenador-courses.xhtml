@@ -19,7 +19,7 @@
             <p:tab 
                 titleStyle="font-size:.85em;"
                 id="course"
-                title="course">
+                title="#{i18n.editAddCourse}">
 
                 <h:form 
                     id="editAddCourse">
@@ -44,6 +44,24 @@
                             id="description"
                             value="#{coordenadorBean.selectedCourse.descricao}"
                             styleClass="description"
+                            maxlength="300" />
+                        
+                        <p:outputLabel
+                            for="lecturer"
+                            value="#{i18n.lecturer}" />
+                        <p:inputText
+                            id="lecturer"
+                            value="#{coordenadorBean.selectedCourse.ministrante}"
+                            styleClass="lecturer"
+                            maxlength="100" />
+                        
+                        <p:outputLabel
+                            for="location"
+                            value="#{i18n.location}" />
+                        <p:inputText
+                            id="location"
+                            value="#{coordenadorBean.selectedCourse.localizacao}"
+                            styleClass="location"
                             maxlength="300" />
                         
                         <p:outputLabel
@@ -72,15 +90,75 @@
                             value="#{i18n.startDate}" />
                         <p:datePicker 
                             id="startDate"
-                            value="#{null}"
+                            value="#{coordenadorBean.selectedCourse.dataInicio}"
                             mask="true"
                             maskSlotChar="_"
                             pattern="dd/MM/yyyy"
-                            mindate=""
+                            mindate="#{coordenadorBean.minDate}"
                             showButtonBar="true"/>
+                        
+                        <p:outputLabel
+                            for="endDate"
+                            value="#{i18n.endDate}" />
+                        <p:datePicker 
+                            id="endDate"
+                            value="#{coordenadorBean.selectedCourse.dataFim}"
+                            mask="true"
+                            maskSlotChar="_"
+                            pattern="dd/MM/yyyy"
+                            mindate="#{coordenadorBean.minDate}"
+                            showButtonBar="true"/>
+                        
+                        <p:outputLabel
+                            for="requesters"
+                            value="#{i18n.requesters}" />
+                        <p:scrollPanel
+                            style="max-height: 10em;">
+                            <p:selectManyCheckbox
+                                id="requesters"
+
+                                converter="estudanteConverter"
+                                layout="pageDirection"
+                                styleClass="requesters">
+
+                                <f:selectItems
+                                    value="#{coordenadorBean.selectedCourse.solicitantes}"
+                                    var="student"
+                                    itemLabel="#{student.nome}"
+                                    itemValue="#{student}" />
+                                <f:attribute 
+                                    name="collectionType" 
+                                    value="java.util.ArrayList" />
+                            </p:selectManyCheckbox>
+                        </p:scrollPanel>
 
                     </p:panelGrid>
 
+                    <h:panelGroup
+                        style="display: flex; justify-content: center; margin-top: .5em;">
+
+                        <!--Cancel operation-->
+                        <p:commandButton
+                            id="cancel"
+                            title="#{i18n.cancel}"
+                            icon="pi pi-times"
+                            oncomplete="PF('editCourse').unselect(0)"
+                            style="color: white;"
+                            styleClass="rounded-button ui-button-info" />
+
+                        &#160;
+                        
+                        <!--Save Course-->
+                        <p:commandButton
+                            id="save"
+                            title="#{i18n.save}"
+                            icon="pi pi-save"
+                            process="@form"
+                            action="#{coordenadorBean.saveCurrent()}"
+                            oncomplete="PF('editCourse').unselect(0)"
+                            update=":courses:coursesTable"
+                            styleClass="rounded-button ui-button-success" />
+                    </h:panelGroup>
 
                     <h:messages />
 
@@ -153,29 +231,18 @@
                     style="width: 10em; text-align: center;">
                     
                     <p:commandButton 
-                        icon="pi pi-pencil" 
+                        icon="pi pi-pencil"
+                        title="#{i18n.editCourse}"
                         process="@this"
                         onstart="$('html, body').animate({ scrollTop: 0 }, 'slow')"
                         oncomplete="PF('editCourse').select(0)"
-                        actionListener="#{coordenadorBean.loadCourse(course)}"
+                        actionListener="#{coordenadorBean.loadCourseWithStudents(course)}"
                         update=":editCourse:editAddCourse"
                         styleClass="rounded-button ui-button-help">
                     </p:commandButton>
                 </p:column>
 
             </p:dataTable>
-
-            <p:confirmPopup 
-                global="true">
-                <p:commandButton 
-                    value="#{no}" 
-                    type="button" 
-                    styleClass="ui-confirm-popup-no ui-button-success"/>
-                <p:commandButton 
-                    value="#{yes}" 
-                    type="button" 
-                    styleClass="ui-confirm-popup-yes ui-button-danger" />
-            </p:confirmPopup>
 
         </h:form>
     </div>

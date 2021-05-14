@@ -71,8 +71,13 @@ import javax.persistence.Temporal;
         query = "SELECT c FROM curso c WHERE c.vagas > 0"),
     @NamedQuery(
             name = "Curso.findAllOtherCoursesByEstudante",
-            query = "SELECT c FROM curso c"
-    )
+            query = "SELECT c FROM curso c"),
+    @NamedQuery(
+            name = "Curso.loadCourseWithStudents",
+            query = "select distinct c from curso c "
+            + "left join fetch c.solicitantes "
+            + "where c.id = :id "
+            + "order by c.id")
 })
 
 public class Curso implements Serializable {
