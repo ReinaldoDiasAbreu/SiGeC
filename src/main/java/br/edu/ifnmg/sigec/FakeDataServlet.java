@@ -1119,6 +1119,16 @@ public class FakeDataServlet extends HttpServlet {
             cu18.getSolicitantes().add(e30);
             e30.getCursosSolicitados().add(cu18);
             
+            cbl.save(c);
+            cbl.save(c2);
+            cbl.save(c3);
+            cbl.save(c4);
+            cbl.save(c5);
+            cbl.save(c6);
+            cbl.save(c7);
+            cbl.save(c8);
+            cbl.save(c9);
+            
             cubl.save(cu);
             cubl.save(cu2);
             cubl.save(cu3);
@@ -1137,17 +1147,7 @@ public class FakeDataServlet extends HttpServlet {
             cubl.save(cu16);
             cubl.save(cu17);
             cubl.save(cu18);
-            
-            cbl.save(c);
-            cbl.save(c2);
-            cbl.save(c3);
-            cbl.save(c4);
-            cbl.save(c5);
-            cbl.save(c6);
-            cbl.save(c7);
-            cbl.save(c8);
-            cbl.save(c9);
-            
+                       
             ebl.save(e);
             ebl.save(e2);
             ebl.save(e3);
