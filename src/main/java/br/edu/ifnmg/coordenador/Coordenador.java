@@ -49,7 +49,7 @@ import javax.persistence.Table;
     @NamedQuery(
         name = "Coordenador.findCursosCriados",
         query = "SELECT cc FROM coordenador c " + 
-                "JOIN c.cursosCriados cc")
+                "JOIN c.cursosCriados cc WHERE c.id = :id")
 })
 
 public class Coordenador extends Pessoa implements Serializable {

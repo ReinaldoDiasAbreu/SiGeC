@@ -3,7 +3,180 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
+
     <div id="coordenador-courses">
-        <span> #{userController.userCoordenador.codigo} </span>
+        
+        <p:accordionPanel
+            activeIndex="-1"
+            id="editCourse"
+            widgetVar="editCourse">
+
+            <p:ajax 
+                event="tabClose"
+                
+                update=":editCourse:editAddCourse" />
+
+            <p:tab 
+                titleStyle="font-size:.85em;"
+                id="course"
+                title="course">
+
+                <h:form 
+                    id="editAddCourse">
+
+                    <p:panelGrid
+                        columns="2"
+                        styleClass="ui-noborder">
+
+                        <p:outputLabel
+                            for="title"
+                            value="#{i18n.title}" />
+                        <p:inputText
+                            id="title"
+                            value="#{coordenadorBean.selectedCourse.titulo}"
+                            styleClass="title"
+                            maxlength="300" />
+                        
+                        <p:outputLabel
+                            for="description"
+                            value="#{i18n.description}" />
+                        <p:inputText
+                            id="description"
+                            value="#{coordenadorBean.selectedCourse.descricao}"
+                            styleClass="description"
+                            maxlength="300" />
+                        
+                        <p:outputLabel
+                            for="openings"
+                            value="#{i18n.openings}" />
+                        <p:spinner 
+                            id="openings"
+                            value="#{coordenadorBean.selectedCourse.vagas}"
+                            min="1"
+                            max="100"
+                            styleClass="openings" />
+                        
+                        <p:outputLabel
+                            for="totalHours"
+                            value="#{i18n.totalHours}" />
+                        <p:spinner 
+                            id="totalHours"
+                            value="#{coordenadorBean.selectedCourse.cargaHoraria}"
+                            min="1"
+                            max="200"
+                            styleClass="totalHours" />
+                        
+
+                        <p:outputLabel
+                            for="startDate"
+                            value="#{i18n.startDate}" />
+                        <p:datePicker 
+                            id="startDate"
+                            value="#{null}"
+                            mask="true"
+                            maskSlotChar="_"
+                            pattern="dd/MM/yyyy"
+                            mindate=""
+                            showButtonBar="true"/>
+
+                    </p:panelGrid>
+
+
+                    <h:messages />
+
+                </h:form>
+
+            </p:tab>
+
+        </p:accordionPanel>
+        
+        <h:form id="courses">
+            <p:dataTable
+                id="coursesTable"
+                widgetVar="coursesTable"
+                value="#{coordenadorBean.allCreatedCourses(userController.userCoordenador.id)}"
+                var="course"
+                reflow="true"
+                paginator="true"
+                paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                currentPageReportTemplate="{startRecord}-{endRecord} #{i18n.of} {totalRecords} #{i18n.records}"
+                rowsPerPageTemplate="5,10,{ShowAll|'#{i18n.all}'}"
+                rows="10"
+                size="small">
+
+                <f:facet name="header">
+                    <div id="dtheader">
+                        <h2>#{i18n.createdCourses.toUpperCase()}</h2>
+                    </div>
+                </f:facet>
+                
+                <p:column 
+                    headerText="#{i18n.title}"
+                    style="width: 12em; text-align: left;">
+ 
+                    <h:outputText 
+                        value="#{course.titulo}"/>
+                </p:column>
+                
+                <p:column 
+                    headerText="#{i18n.openings}"
+                    style="width: 5em; text-align: center;">
+ 
+                    <h:outputText 
+                        value="#{course.vagas}"/>
+                </p:column>
+                
+                <p:column 
+                    headerText="#{i18n.totalHours}"
+                    style="width: 5em; text-align: center;">
+ 
+                    <h:outputText 
+                        value="#{course.cargaHoraria}"/>
+                </p:column>
+                
+                <p:column 
+                    headerText="#{i18n.startDate}"
+                    style="width: 6em; text-align: left;">
+ 
+                    <h:outputText 
+                        value="#{course.dataInicio}"/>
+                </p:column>
+                
+                <p:column 
+                    headerText="#{i18n.description}">
+ 
+                    <h:outputText 
+                        value="#{course.descricao}"/>
+                </p:column>
+                
+                <p:column
+                    style="width: 10em; text-align: center;">
+                    
+                    <p:commandButton 
+                        icon="pi pi-pencil" 
+                        process="@this"
+                        onstart="$('html, body').animate({ scrollTop: 0 }, 'slow')"
+                        oncomplete="PF('editCourse').select(0)"
+                        actionListener="#{coordenadorBean.loadCourse(course)}"
+                        update=":editCourse:editAddCourse"
+                        styleClass="rounded-button ui-button-help">
+                    </p:commandButton>
+                </p:column>
+
+            </p:dataTable>
+
+            <p:confirmPopup 
+                global="true">
+                <p:commandButton 
+                    value="#{no}" 
+                    type="button" 
+                    styleClass="ui-confirm-popup-no ui-button-success"/>
+                <p:commandButton 
+                    value="#{yes}" 
+                    type="button" 
+                    styleClass="ui-confirm-popup-yes ui-button-danger" />
+            </p:confirmPopup>
+
+        </h:form>
     </div>
 </ui:composition>

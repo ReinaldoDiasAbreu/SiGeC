@@ -16,7 +16,10 @@
  */
 package br.edu.ifnmg.coordenador;
 
+import br.edu.ifnmg.curso.Curso;
+import br.edu.ifnmg.curso.CursoBeanLocal;
 import java.io.Serializable;
+import java.util.List;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -32,7 +35,12 @@ public class CoordenadorServiceBean implements Serializable {
     @Inject
     private CoordenadorBeanLocal coordenadorlocal;
     
+    @Inject
+    private CursoBeanLocal cursolocal;
+    
     private Coordenador coordenador;
+    
+    private Curso selectedCourse;
     
     private String senha1;
     private String senha2;
@@ -41,6 +49,24 @@ public class CoordenadorServiceBean implements Serializable {
         coordenador = new Coordenador();
     }
 
+    public void save(){        
+        if(senha1.equals(senha2)){
+            coordenador.setSenha(senha1);
+        }
+        
+        coordenadorlocal.save(coordenador);
+    }
+    
+    public void loadCourse(Curso curso)
+    {
+        selectedCourse = curso;
+    }
+    
+    public List<Curso> allCreatedCourses(Long id)
+    {
+        return coordenadorlocal.findCursosCriados(id);
+    }
+    
     public Coordenador getCoordenador() {
         return coordenador;
     }
@@ -48,13 +74,13 @@ public class CoordenadorServiceBean implements Serializable {
     public void setCoordenador(Coordenador coordenador) {
         this.coordenador = coordenador;
     }
-    
-    public void save(){        
-        if(senha1.equals(senha2)){
-            coordenador.setSenha(senha1);
-        }
-        
-        coordenadorlocal.save(coordenador);
+
+    public Curso getSelectedCourse() {
+        return selectedCourse;
+    }
+
+    public void setSelectedCourse(Curso selectedCourse) {
+        this.selectedCourse = selectedCourse;
     }
 
     public String getSenha1() {
