@@ -9,8 +9,8 @@
             <p:menuitem value="#{i18n.homepage}" icon="pi pi-fw pi-home" outcome="/index.html"/>
 
             <p:submenu label="#{i18n.index_cadastro}" icon="pi pi-fw pi-user-plus">
-                <p:menuitem value="#{i18n.index_aluno}" icon="pi pi-fw pi-book"/>
-                <p:menuitem value="#{i18n.index_coordenador}" icon="pi pi-fw pi-cog"/>
+                <p:menuitem value="#{i18n.index_aluno}" icon="pi pi-fw pi-book" outcome="/register/register_estudante.xhtml"/>
+                <p:menuitem value="#{i18n.index_coordenador}" icon="pi pi-fw pi-cog" outcome="/register/register_coordenador.xhtml"/>
             </p:submenu>
 
             <p:menuitem value="#{i18n.index_verificarcod}" icon="pi pi-fw pi-ticket"/>
