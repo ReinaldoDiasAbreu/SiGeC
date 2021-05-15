@@ -123,4 +123,5 @@ public class CursoBean implements CursoBeanLocal{
                 .setParameter("id", id)
                 .getSingleResult();
     }
+
 }

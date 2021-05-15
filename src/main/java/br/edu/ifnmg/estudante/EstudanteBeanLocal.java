@@ -32,6 +32,7 @@ public interface EstudanteBeanLocal {
     public List<Estudante> findAllEstudantes();
     public Estudante findEstudanteById(Long id);
     public Estudante findEstudanteByCpf(String cpf);
-    public List<Curso> findAllCursosMatriculados(Long id);
     public List<Curso> findCursosSolicitados(Long id);
+    public List<Curso> findAllOtherCourses(Long id);
+    public List<Curso> findCursosMatriculados(Long id);
 }

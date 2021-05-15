@@ -18,6 +18,7 @@ package br.edu.ifnmg.sigec.auth;
 
 import br.edu.ifnmg.coordenador.Coordenador;
 import br.edu.ifnmg.coordenador.CoordenadorBeanLocal;
+import br.edu.ifnmg.curso.Curso;
 import br.edu.ifnmg.estudante.Estudante;
 import br.edu.ifnmg.estudante.EstudanteBeanLocal;
 import br.edu.ifnmg.pessoa.Pessoa;
@@ -100,11 +101,9 @@ public class UserController {
             this.currentUser = pessoaBean.findPessoaByEmail(username); 
              if(currentUser.getGrupo().equals("aluno")){
                 userAluno = estudanteBean.findEstudanteById(currentUser.getId());
-                System.out.println("Estudante: " + userAluno);
              }
              else{
                 userCoordenador = coordenadorBean.findCoordenadorById(currentUser.getId());
-                System.out.println("Coordenador: " + userCoordenador);
              }
         }
     }
@@ -135,6 +134,10 @@ public class UserController {
                     .invalidateSession();
         return "/index.xhtml?faces-redirect=true";
     }
-
+    
+    public void addSolicitarMatriculaCurso(Curso c){
+        userAluno.addSolicitacaoCurso(c);
+        estudanteBean.update(userAluno);
+    }
 
 }

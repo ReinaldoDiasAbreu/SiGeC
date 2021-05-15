@@ -60,7 +60,7 @@ public class CoordenadorBean implements CoordenadorBeanLocal {
     
     @Override
     public void update(Coordenador c){
-        em.refresh(c);
+        em.merge(c);
     }
     
     @Override
