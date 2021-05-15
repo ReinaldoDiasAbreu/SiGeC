@@ -60,7 +60,7 @@ public class EstudanteBean implements EstudanteBeanLocal {
     
     @Override
     public void update(Estudante e){
-        em.refresh(e);
+        em.merge(e);
     }
    
     @Override
@@ -89,18 +89,27 @@ public class EstudanteBean implements EstudanteBeanLocal {
     }
 
     @Override
-    public List<Curso> findAllCursosMatriculados(Long id) {
-        Query q = em.createNamedQuery(
-            "Estudante.findAllCursosMatriculados", Curso.class 
+    public List<Curso> findCursosSolicitados(Long id) {
+       Query q = em.createNamedQuery(
+            "Estudante.findCursosSolicitados", Curso.class 
         );
         q.setParameter("id", id);
         return q.getResultList();
     }
 
     @Override
-    public List<Curso> findCursosSolicitados(Long id) {
-       Query q = em.createNamedQuery(
-            "Estudante.findCursosSolicitados", Curso.class 
+    public List<Curso> findAllOtherCourses(Long id) {
+        Query q = em.createNamedQuery(
+            "Estudante.AllOtherCourses", Curso.class 
+        );
+        q.setParameter("id", id);
+        return q.getResultList();
+    }
+
+    @Override
+    public List<Curso> findCursosMatriculados(Long id) {
+        Query q = em.createNamedQuery(
+            "Estudante.findCursosMatriculados", Curso.class 
         );
         q.setParameter("id", id);
         return q.getResultList();

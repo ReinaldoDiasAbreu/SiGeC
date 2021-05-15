@@ -16,6 +16,11 @@
  */
 package br.edu.ifnmg.sigec.auth;
 
+import br.edu.ifnmg.coordenador.Coordenador;
+import br.edu.ifnmg.coordenador.CoordenadorBeanLocal;
+import br.edu.ifnmg.curso.Curso;
+import br.edu.ifnmg.estudante.Estudante;
+import br.edu.ifnmg.estudante.EstudanteBeanLocal;
 import br.edu.ifnmg.pessoa.Pessoa;
 import br.edu.ifnmg.pessoa.PessoaBeanLocal;
 import java.io.IOException;
@@ -39,18 +44,67 @@ public class UserController {
     PessoaBeanLocal pessoaBean;
     
     @Inject
+    CoordenadorBeanLocal coordenadorBean;
+    
+    @Inject
+    EstudanteBeanLocal estudanteBean;
+    
+    @Inject
     SecurityContext securityContext;
     
     @Inject
     FacesContext facesContext; 
     
     private Pessoa currentUser;
+    private Estudante userAluno;
+    private Coordenador userCoordenador;
     
+    private String lang;
+
+    public UserController() {
+        lang = "pt-BR";
+    }
+    
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+    
+    public String defineLang(String lang){
+        this.setLang(lang);
+        return null;
+    }
+
+    public Estudante getUserAluno() {
+        return userAluno;
+    }
+
+    public void setUserAluno(Estudante userAluno) {
+        this.userAluno = userAluno;
+    }
+
+    public Coordenador getUserCoordenador() {
+        return userCoordenador;
+    }
+
+    public void setUserCoordenador(Coordenador userCoordenador) {
+        this.userCoordenador = userCoordenador;
+    }
+
     @PostConstruct
     public void initialize() {
         if(isAuthenticated()){
             String username = securityContext.getCallerPrincipal().getName();
-            this.currentUser = pessoaBean.findPessoaByEmail(username);  
+            this.currentUser = pessoaBean.findPessoaByEmail(username); 
+             if(currentUser.getGrupo().equals("aluno")){
+                userAluno = estudanteBean.findEstudanteById(currentUser.getId());
+             }
+             else{
+                userCoordenador = coordenadorBean.findCoordenadorById(currentUser.getId());
+             }
         }
     }
 
@@ -80,4 +134,10 @@ public class UserController {
                     .invalidateSession();
         return "/index.xhtml?faces-redirect=true";
     }
+    
+    public void addSolicitarMatriculaCurso(Curso c){
+        userAluno.addSolicitacaoCurso(c);
+        estudanteBean.update(userAluno);
+    }
+
 }

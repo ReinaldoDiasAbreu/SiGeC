@@ -16,7 +16,9 @@
  */
 package br.edu.ifnmg.estudante;
 
+import br.edu.ifnmg.curso.Curso;
 import java.io.Serializable;
+import java.util.List;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,7 +39,10 @@ public class EstudanteServiceBean implements Serializable  {
     
     private String senha1;
     private String senha2;
-
+    
+    // Reserved for datatable filtered
+    private List<Curso> filteredCursos;
+    
     public EstudanteServiceBean() {
         estudante = new Estudante();
     }
@@ -49,13 +54,13 @@ public class EstudanteServiceBean implements Serializable  {
     public void setEstudante(Estudante estudante) {
         this.estudante = estudante;
     }
-    
-    public void save(){
-        if(senha1.equals(senha2)){
-            estudante.setSenha(senha1);
-        }
-        System.out.println("\n\nEstudante: " + estudante);
-        estudantelocal.save(estudante);
+
+    public List<Curso> getFilteredCursos() {
+        return filteredCursos;
+    }
+
+    public void setFilteredCursos(List<Curso> filteredCursos) {
+        this.filteredCursos = filteredCursos;
     }
 
     public String getSenha1() {
@@ -74,6 +79,20 @@ public class EstudanteServiceBean implements Serializable  {
         this.senha2 = senha2;
     }
     
+    public void save(){
+        if(senha1.equals(senha2)){
+             estudante.setSenha(senha1);
+        }
+        estudantelocal.save(estudante);
+    }
     
+    public List<Curso> findAllOtherCourses(Long id){
+        return estudantelocal.findAllOtherCourses(id);
+    }
     
+    public List<Curso> findCursosMatriculados(Long id){
+        return estudantelocal.findCursosMatriculados(id);
+    }
+
+
 }

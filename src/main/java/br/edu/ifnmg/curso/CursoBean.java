@@ -33,7 +33,13 @@ public class CursoBean implements CursoBeanLocal{
     
     @Override
     public void save(Curso c){
-        em.persist(c);
+        if (em.contains(c)) {
+            em.persist(c);
+        } else if (c.getId() != null) {
+            em.merge(c);
+        } else {
+            em.merge(c);
+        }
     }
     
     @Override
@@ -43,7 +49,7 @@ public class CursoBean implements CursoBeanLocal{
     
     @Override
     public void update(Curso c){
-        em.refresh(c);
+        em.merge(c);
     }
     
     @Override
@@ -109,4 +115,13 @@ public class CursoBean implements CursoBeanLocal{
         //q.setParameter("id", id);
         return q.getResultList();
     }
+    
+    @Override
+    public Curso loadCourseWithStudents(Long id)
+    {
+        return em.createNamedQuery("Curso.loadCourseWithStudents", Curso.class)
+                .setParameter("id", id)
+                .getSingleResult();
+    }
+
 }
