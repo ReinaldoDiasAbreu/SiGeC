@@ -42,12 +42,12 @@
                 
                 <h3>#{i18n.form_senha1}</h3>
                 <span class="ui-float-label">
-                   <p:password id="senha1-input" value="#{estudanteBean.senha1}" style="width: 400px"/>
+                    <p:password id="senha1-input" value="#{estudanteBean.senha2}" style="width: 400px"/>
                 </span>
 
                 <h3>#{i18n.form_senha2}</h3>
                 <span class="ui-float-label">
-                   <p:password id="senha2-input" value="#{estudanteBean.senha2}" style="width: 400px"/>
+                    <p:password id="senha2-input" value="#{estudanteBean.senha1}" style="width: 400px"/>
                 </span>
 
                  <p:commandButton value="#{i18n.cadastro_salvar}"  action="#{estudanteBean.save()}"  styleClass="ui-button-info"/>

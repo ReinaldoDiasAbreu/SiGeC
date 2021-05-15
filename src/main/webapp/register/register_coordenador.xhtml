@@ -17,27 +17,27 @@
             <h:form> 
                 <h3>#{i18n.form_username}</h3>
                 <span class="ui-float-label">
-                   <p:inputText id="name-input" value="#{estudanteBean.estudante.nome}" style="width: 400px"/>
+                    <p:inputText id="name-input" value="#{coordenadorBean.coordenador.nome}" style="width: 400px"/>
                 </span>
                 
                 <h3>#{i18n.form_email}</h3>
                 <span class="ui-float-label">
-                   <p:inputText id="email-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                   <p:inputText id="email-input" value="#{coordenadorBean.coordenador.email}" style="width: 400px"/>
                 </span>
                 
                 <h3>#{i18n.form_codigo}</h3>
                 <span class="ui-float-label">
-                   <p:inputText id="codigo-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                    <p:inputText id="codigo-input" value="#{coordenadorBean.coordenador.codigo}" style="width: 400px"/>
                 </span>
                 
                 <h3>#{i18n.form_senha1}</h3>
                 <span class="ui-float-label">
-                   <p:inputText id="senha1-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                    <p:inputText id="senha1-input" value="#{coordenadorBean.senha1}" style="width: 400px"/>
                 </span>
                 
                 <h3>#{i18n.form_senha2}</h3>
                 <span class="ui-float-label">
-                   <p:inputText id="senha2-input" value="#{estudanteBean.estudante.email}" style="width: 400px"/>
+                    <p:inputText id="senha2-input" value="#{coordenadorBean.senha2}" style="width: 400px"/>
                 </span>
 
                 <p:commandButton value="#{i18n.cadastro_salvar}"  action="#{coordenadorBean.save()}"  styleClass="ui-button-info"/>

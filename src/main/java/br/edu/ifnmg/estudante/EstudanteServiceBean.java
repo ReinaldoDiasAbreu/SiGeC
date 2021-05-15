@@ -37,6 +37,9 @@ public class EstudanteServiceBean implements Serializable  {
     
     private Estudante estudante;
     
+    private String senha1;
+    private String senha2;
+    
     // Reserved for datatable filtered
     private List<Curso> filteredCursos;
     
@@ -59,8 +62,27 @@ public class EstudanteServiceBean implements Serializable  {
     public void setFilteredCursos(List<Curso> filteredCursos) {
         this.filteredCursos = filteredCursos;
     }
+
+    public String getSenha1() {
+        return senha1;
+    }
+
+    public void setSenha1(String senha1) {
+        this.senha1 = senha1;
+    }
+
+    public String getSenha2() {
+        return senha2;
+    }
+
+    public void setSenha2(String senha2) {
+        this.senha2 = senha2;
+    }
     
     public void save(){
+        if(senha1.equals(senha2)){
+             estudante.setSenha(senha1);
+        }
         estudantelocal.save(estudante);
     }
     
