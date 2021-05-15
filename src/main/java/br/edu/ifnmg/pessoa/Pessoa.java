@@ -74,7 +74,7 @@ public class Pessoa implements Serializable{
     @NotEmpty
     private String nome;
     
-    @Column(length = 300, nullable = false)
+    @Column(length = 300, nullable = false, unique = true)
     @NotEmpty
     @Email
     private String email;
